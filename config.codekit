@@ -5018,6 +5018,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/slide1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 128850,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/slide1.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/slide1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/index.php": {
 		"fileType": 8192,
 		"ignore": 0,
