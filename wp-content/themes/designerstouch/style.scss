@@ -25,11 +25,25 @@ html {-webkit-text-size-adjust: 100%;} // Disables scaling on landscape mobile
 /* Variables */
 
 $orange:#eab922;
+$bluedark: #002a53;
+$lato:'Lato', sans-serif;
+$opensans:'Open Sans', sans-serif;
+$bluelight: #4977d1;
+
+
+/* Global */
+
+body {
+	font-family: $lato;
+}
 
 
 header, section, nav, footer {
 	display: block;
 }
+
+
+/* Header */
 
 
 header {
@@ -40,6 +54,7 @@ header {
 	padding:8px;
 	overflow: hidden;
 	width:100%;
+	z-index:50;
 	.logo {
 		float: left;
 		width:200px;
@@ -63,6 +78,9 @@ header {
 }
 
 
+/* Slide Content */
+
+
 #main {
 	margin-top:56px;
 }
@@ -73,6 +91,90 @@ header {
 		background:url(images/slide1.jpg) top left no-repeat;
 		background-size:cover;
 		width:100%;
-		height:400px;
+		height:320px;
+		text-align: center;
+		.slide_content {
+			background:rgba(255, 255, 255, 0.8);
+			display: inline-block;
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			width:80%;
+			padding: 25px;
+			span.slide_header {
+				font-family: $opensans;
+				font-weight:600;
+				color:$bluedark;
+				font-size: 29px;
+				display: block;
+				margin-bottom:10px;
+			}
+			a.get_started {
+				background:$bluelight;
+				color:#fff;
+				text-decoration: none;
+				font-family: $lato;
+				font-size:20px;
+				padding:5px 20px;
+				display: inline-block;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+			}
+		}
 	}
 }
+
+/* Intro Section */
+
+
+.intro {
+	text-align: center;
+	padding:50px 25px;
+	.intro_header {
+		font-family: $opensans;
+		font-weight:600;
+		color:$bluedark;
+		font-size: 26px;
+		display: block;
+		margin-bottom:10px;
+	}
+	.intro_options_wrapper {
+		.single_intro_options {
+			margin-top:45px;
+			img {
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				max-width:200px;
+				display: block;
+				margin: 0 auto 25px;
+			}
+			a.intro_button {
+				background:$orange;
+				color:#fff;
+				text-decoration: none;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				padding:5px 20px;
+				font-family: $lato;
+				font-size:20px;
+				
+					
+				
+			}
+			a.intro_button:after {
+				width: 0; 
+				height: 0; 
+				border-top: 6px solid transparent;
+				border-bottom: 6px solid transparent;
+				border-left: 6px solid #fff;
+				display: inline-block;
+				content: "";
+				margin-left:7px;
+			}
+		}
+	}
+}
+

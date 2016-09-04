@@ -5007,6 +5007,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/ew.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8087,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/ew.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/ew.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/intro-test.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1897,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/intro-test.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/intro-test.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/images\/logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
