@@ -5073,6 +5073,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/fb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1302,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/fb.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/fb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/images\/houzz.png": {
 		"fileType": 32768,
 		"ignore": 0,

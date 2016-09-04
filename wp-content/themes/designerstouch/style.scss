@@ -330,3 +330,33 @@ header {
 	}
 }
 
+
+/* Footer */
+
+footer {
+	background:#444444;
+	text-align: center;
+	padding:20px;
+	color:#fff;
+	font-size:13px;
+	a {
+			display: inline-block;
+			color:#fff;
+			text-decoration: none
+		}
+	.social_icons {
+		
+		img {
+			display: inline-block;
+		}
+	}
+	.copy {
+		
+		margin:15px 0;
+		display: inline-block;
+	}
+	.numbers {
+		
+	}
+}
+
