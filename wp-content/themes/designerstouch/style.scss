@@ -132,6 +132,8 @@ header {
 				display: block;
 				text-decoration: none;
 				margin-bottom:10px;
+				font-size:18px;
+				font-weight: 400;
 			}
 		}
 	}
@@ -364,4 +366,112 @@ footer {
 		
 	}
 }
+
+
+@media screen and (min-width: 575px) {
+	
+
+/* Slide Content */
+
+
+#main {
+	
+}
+
+
+.slideshow {
+	.slide {
+		height:400px;
+		.slide_content {
+			max-width:500px;
+			
+			span.slide_header {
+				
+			}
+			.number_wrapper {
+				margin-bottom:10px;
+				.numbers {
+					display:inline-block;
+					margin-left:10px;
+					margin-right:10px;
+				}
+			}
+		}
+	}
+}
+
+
+/* Intro Section */
+
+
+.intro {
+	.intro_header {
+		
+	}
+	.intro_options_wrapper {
+		max-width: 550px;
+		margin:0 auto;
+		.single_intro_options {
+			display: inline-block;
+			margin: 45px;
+		}
+	}
+}
+
+
+/* About Section */
+
+.about {
+	.about_slideshow {
+		.about_slide_content {
+			max-width:500px;
+			margin:0 auto;
+		}
+	}
+}
+
+
+/* Waranties */
+
+
+.warranties {
+	a.blue_button {
+		position: relative;
+		top:-4px;
+		left:9px;
+	}
+	span.large_header {
+	}
+	.four_warr_wrapper {
+		overflow: hidden;
+		.single_warr {
+			width:45%;
+			float:left;
+			margin-left:2.5%;
+			margin-right:2.5%;
+			span.circle {
+				
+			}
+			span.warr_description {
+				
+			}
+			&:last-of-type {
+				border-bottom: 1px solid $greydark;
+				padding-bottom:35px;
+			}
+		}
+	}
+}
+
+
+
+    
+
+	
+	
+} /* Media Query */
+
+
+
+
 
