@@ -5007,6 +5007,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/aboutbg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 40013,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/aboutbg.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/aboutbg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/images\/ew.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

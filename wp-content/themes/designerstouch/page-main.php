@@ -43,10 +43,58 @@ get_header(); ?>
 				
 			</div><!-- single_intro_options -->
 			
+			<div class="single_intro_options">
+				
+				<a href="">
+					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
+				</a>
+				
+				<a class="intro_button" href="">Photo Gallery</a><!-- intro_button -->
+				
+			</div><!-- single_intro_options -->
+			
+			<div class="single_intro_options">
+				
+				<a href="">
+					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
+				</a>
+				
+				<a class="intro_button" href="">Photo Gallery</a><!-- intro_button -->
+				
+			</div><!-- single_intro_options -->
+			
+			<div class="single_intro_options">
+				
+				<a href="">
+					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
+				</a>
+				
+				<a class="intro_button" href="">Photo Gallery</a><!-- intro_button -->
+				
+			</div><!-- single_intro_options -->
+			
 			
 		</div><!-- intro_options_wrapper -->
 		
 	</section><!-- intro -->
+	
+	
+	<section class="about">
+		
+		
+		<div class="about_slideshow">
+			
+			<div class="about_slide">
+				
+				Hello
+				
+				
+			</div><!-- about_slide -->
+			
+		</div><!-- about_slideshow -->
+		
+		
+	</section><!-- about -->
 	
 	
 	

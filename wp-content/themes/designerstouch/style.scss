@@ -130,7 +130,7 @@ header {
 
 .intro {
 	text-align: center;
-	padding:50px 25px;
+	padding: 50px 25px 65px;
 	.intro_header {
 		font-family: $opensans;
 		font-weight:600;
@@ -175,6 +175,18 @@ header {
 				margin-left:7px;
 			}
 		}
+	}
+}
+
+
+/* About Section */
+
+.about {
+	width:100%;
+	background:url(images/aboutbg.jpg) top left no-repeat;
+	background-size:cover;
+	.about_slideshow {
+		background:rgba(255, 255, 255, 0.8);
 	}
 }
 
