@@ -29,17 +29,35 @@ $bluedark: #002a53;
 $lato:'Lato', sans-serif;
 $opensans:'Open Sans', sans-serif;
 $bluelight: #4977d1;
+$greydark:#c8c8c8;
+$greylight:#f6f6f6;
 
 
 /* Global */
 
 body {
 	font-family: $lato;
+	font-weight:300;
+	line-height: 1.1;
 }
 
 
 header, section, nav, footer {
 	display: block;
+}
+
+a.blue_button {
+	background:$bluelight;
+	color:#fff;
+	text-decoration: none;
+	font-family: $lato;
+	font-size:18px;
+	padding:7px 20px;
+	display: inline-block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	line-height: 1;
 }
 
 
@@ -105,22 +123,12 @@ header {
 				font-family: $opensans;
 				font-weight:600;
 				color:$bluedark;
-				font-size: 29px;
+				font-size: 27px;
 				display: block;
-				margin-bottom:10px;
+				margin-bottom:15px;
+				
 			}
-			a.get_started {
-				background:$bluelight;
-				color:#fff;
-				text-decoration: none;
-				font-family: $lato;
-				font-size:20px;
-				padding:5px 20px;
-				display: inline-block;
-				-webkit-border-radius: 5px;
-				-moz-border-radius: 5px;
-				border-radius: 5px;
-			}
+			
 		}
 	}
 }
@@ -146,7 +154,7 @@ header {
 				-webkit-border-radius: 50%;
 				-moz-border-radius: 50%;
 				border-radius: 50%;
-				max-width:200px;
+				max-width:175px;
 				display: block;
 				margin: 0 auto 25px;
 			}
@@ -160,9 +168,6 @@ header {
 				padding:5px 20px;
 				font-family: $lato;
 				font-size:20px;
-				
-					
-				
 			}
 			a.intro_button:after {
 				width: 0; 
@@ -185,8 +190,143 @@ header {
 	width:100%;
 	background:url(images/aboutbg.jpg) top left no-repeat;
 	background-size:cover;
+	text-align: center;	
+	padding:50px 25px;
 	.about_slideshow {
-		background:rgba(255, 255, 255, 0.8);
+		//background:rgba(255, 255, 255, 0.8);
+		color:#fff;
+		
+		line-height:1.2;
+		.about_slide_content {
+			.large_header {
+				font-weight:700;
+				font-family: $opensans;
+				font-size: 29px;
+				margin-bottom:20px;
+				text-transform: uppercase;
+				display: inline-block;
+			}
+			p {
+				margin-bottom:20px;
+				line-height:1.4;
+			}
+			p:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		.about_slide_image {
+			margin-top:35px;
+			img {
+				
+			}
+			span {
+				display: block;
+				margin-top:15px;
+			}
+		}
+	}
+}
+
+
+/* Waranties */
+
+
+.warranties {
+	padding:50px 25px;
+	text-align: center;
+	span.large_header {
+		color:$bluedark;
+		font-family: $opensans;
+		font-weight:700;
+		font-size:29px;
+		margin-bottom:25px;
+		display: inline-block;
+	}
+	.four_warr_wrapper {
+		text-align: center;
+		.single_warr {
+			margin:35px 0;
+			padding-bottom:35px;
+			border-bottom: 1px solid $greydark;
+			span.circle {
+				background: $orange;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				width:30px;
+				height:30px;
+				display:block;
+				color:#fff;
+				font-size:19px;
+				margin:0 auto;
+				padding-top:5px;
+			}
+			span.warr_description {
+				font-size: 26px;
+				display: inline-block;
+				margin-top:20px;
+			}
+			&:last-of-type {
+				border:none;
+				margin-bottom:0px;
+				padding-bottom:0px;
+			}
+		}
+	}
+}
+
+/* Testimonials */
+
+
+.testimonials {
+	background:$greylight;
+	padding:50px 25px;
+	text-align: center;
+	border-bottom:1px solid #b6b6b6;
+	span.large_header {
+		font-size:29px;
+		margin-bottom:25px;
+		font-weight: 700;
+		font-family: $opensans;
+		color:$bluedark;
+	}
+	.test_content {
+		margin-top:25px;
+		font-size:17px;
+		line-height: 1.4;
+		display: inline-block;
+		span.test {
+			font-style: italic;
+			display: block;
+		}
+		span.name {
+			margin-top:25px;
+			display: block;
+		}
+	}
+}
+
+
+/* Review */
+
+.leave_review {
+	background:$greylight;
+	padding:50px 25px;
+	text-align: center;
+	span.large_header {
+		font-size:29px;
+		margin-bottom:25px;
+		font-weight: 700;
+		font-family: $opensans;
+		color:$bluedark;
+	}
+	.review_icons {
+		margin-top:35px;
+		img {
+			display: block;
+			margin:20px auto;
+			
+		}
 	}
 }
 

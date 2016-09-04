@@ -5018,6 +5018,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/al.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16097,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/al.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/al.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/bbb.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5850,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/bbb.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/bbb.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/bbb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13578,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/bbb.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/bbb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/charlie.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2574,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/charlie.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/charlie.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/images\/ew.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -5025,6 +5069,17 @@
 		"initialSize": 8087,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/ew.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/ew.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/houzz.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6561,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/houzz.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/houzz.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -5051,6 +5106,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/louis.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5748,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/louis.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/louis.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/louis.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7307,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/louis.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/louis.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/images\/slide1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -5058,6 +5135,17 @@
 		"initialSize": 128850,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/slide1.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/slide1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/thumbtac.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7719,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/thumbtac.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/thumbtac.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
