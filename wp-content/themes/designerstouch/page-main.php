@@ -15,6 +15,9 @@ get_header(); ?>
 				
 				<span class="slide_header">Slide Title Here</span><!-- slide_header -->
 				
+				<a class="numbers" href="tel:5022674971">Ky 502 267 4971</a>
+				<a class="numbers" href="tel:8129442267">In 812 944 2267</a>
+				
 				<a href="" class="blue_button">Get Started</a>
 				
 			</div><!-- slide_content -->
