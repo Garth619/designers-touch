@@ -556,6 +556,26 @@ footer {
 	}
 }
 
+/* Gallery Inner */
+
+a.gallery_back {
+	font-family: $opensans;
+	color:#000;
+	font-weight: 700;
+	display: block;
+	margin:0 auto;
+	&:before {
+		 width: 0; 
+		 height: 0; 
+		 border-top: 6px solid transparent;
+		 border-bottom: 6px solid transparent; 
+		 border-right:6px solid $orange; 
+		 content:"";
+		 display: inline-block;
+		 margin-right:5px;
+	}
+}
+
 
 @media screen and (min-width: 575px) {
 	
@@ -658,8 +678,12 @@ header {
 
 
 .testimonials {
+	.test_slideshow {
+	max-width:700px;
+	margin: 0 auto;
 	.test_content {
-		max-width:700px;
+		
+	}
 	}
 }
 
