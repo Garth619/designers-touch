@@ -53,23 +53,23 @@
 		
 		<div class="review_icons">
 			
-			<a href="">
+			<a href="http://www.bbb.org/louisville/business-reviews/drapery-installation-service/designers-touch-in-floyds-knobs-in-2000333/#bbbonlineclick" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/bbb.png"/>
 			</a>
 			
-			<a href="">
+			<a href="http://metro-links.com/LouisvilleKentucky" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/louis.png"/>
 			</a>
 			
-			<a href="">
+			<a href="https://www.thumbtack.com/ky/louisville/window-treatments/" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/thumbtac.png"/>
 			</a>
 			
-			<a href="">
+			<a href="http://www.angieslist.com/companylist/us/in/floyds-knobs/exciting-windows-by-designers-touch-reviews-2353519.aspx?cid=ssabadge" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/al.png"/>
 			</a>
 			
-			<a href="">
+			<a href="http://www.houzz.com/pro/designerstouchin/custom-draperies-by-designers-touch" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/houzz.png"/>
 			</a>
 			

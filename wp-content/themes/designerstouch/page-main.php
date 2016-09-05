@@ -99,31 +99,31 @@ get_header(); ?>
 			
 			<div class="single_intro_options">
 				
-				<a href="">
+				<a href="<?php bloginfo('url');?>/gallery">
 					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
 				</a>
 				
-				<a class="intro_button" href="">Photo Gallery</a><!-- intro_button -->
+				<a class="intro_button" href="<?php bloginfo('url');?>/gallery">Photo Gallery</a><!-- intro_button -->
 				
 			</div><!-- single_intro_options -->
 			
 			<div class="single_intro_options">
 				
-				<a href="">
+				<a href="<?php bloginfo('url');?>/products">
 					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
 				</a>
 				
-				<a class="intro_button" href="">Products</a><!-- intro_button -->
+				<a class="intro_button" href="<?php bloginfo('url');?>/products">Products</a><!-- intro_button -->
 				
 			</div><!-- single_intro_options -->
 			
 			<div class="single_intro_options">
 				
-				<a href="">
+				<a href="<?php bloginfo('url');?>/blog">
 					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
 				</a>
 				
-				<a class="intro_button" href="">Visit Our Blog</a><!-- intro_button -->
+				<a class="intro_button" href="<?php bloginfo('url');?>/blog">Visit Our Blog</a><!-- intro_button -->
 				
 			</div><!-- single_intro_options -->
 			
@@ -174,20 +174,16 @@ get_header(); ?>
 				
 				<div class="about_slide_content">
 				
-					<span class="large_header">About2 Designer's Touch</span><!-- large_header -->
+					<span class="large_header">Another Title</span><!-- large_header -->
 				
-					<p>Exciting Windows! by Designer’s Touch expert designer, Charles Marshall, has over 40 years of experience designing custom window treatments in Floyds Knobs, IN and Louisville, KY.</p> 
-
-					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
-					
-					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				
 				</div><!-- about_slide_content -->
 				
 				<div class="about_slide_image">
 					
 					<img src="<?php bloginfo('template_directory');?>/images/charlie.jpg"/>
-					<span>Charlie Marshall</span>
+					<span>Another Image</span>
 					
 				</div><!-- about_slide_image -->
 				
@@ -198,22 +194,16 @@ get_header(); ?>
 				
 				<div class="about_slide_content">
 				
-					<span class="large_header">About3 Designer's Touch</span><!-- large_header -->
+					<span class="large_header">A Third Title</span><!-- large_header -->
 				
-					<p>Exciting Windows! by Designer’s Touch expert designer, Charles Marshall, has over 40 years of experience designing custom window treatments in Floyds Knobs, IN and Louisville, KY.</p> 
-
-					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
-					
-					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
-					
-					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				
 				</div><!-- about_slide_content -->
 				
 				<div class="about_slide_image">
 					
 					<img src="<?php bloginfo('template_directory');?>/images/charlie.jpg"/>
-					<span>Charlie Marshall</span>
+					<span>Another Image</span>
 					
 				</div><!-- about_slide_image -->
 				
@@ -241,7 +231,7 @@ get_header(); ?>
 		
 		<span class="large_header">Four Remarkable Warranties</span><!-- large_header -->
 		
-		<a class="blue_button" href="">Learn More</a>
+		<a class="blue_button" href="<?php bloginfo('url');?>/warranties">Learn More</a>
 		
 		<div class="four_warr_wrapper">
 			

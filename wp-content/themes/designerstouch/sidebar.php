@@ -2,7 +2,7 @@
 	
 	<div class="sidebar_pic_wrapper">
 		
-		<a href="">
+		<a href="<?php bloginfo('url');?>/gallery">
 			<img class="pg" src="<?php bloginfo('template_directory');?>/images/pg.jpg"/>
 			<span>View Photo Gallery</span>
 		</a>

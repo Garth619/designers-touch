@@ -124,13 +124,14 @@ header {
 	}
 	.menu_wrapper {
 		float:right;
-		width:50px;
+		width:40px;
 		background:$orange;
 		overflow: hidden;
-		padding: 8px;
+		padding: 6px;
+		margin-top:5px;
 		.menu_bars {
 			width:100%;
-			height:4px;
+			height:3px;
 			margin-bottom:4px;
 			background:#fff;
 		}
@@ -145,7 +146,7 @@ header {
 
 
 #main {
-	margin-top:56px;
+	margin-top:54px;
 }
 
 
@@ -1015,7 +1016,7 @@ footer {
 	background: url(images/banner.jpg) top center no-repeat;
 	background-size:cover;
 	width:100%;
-	height:300px;
+	height:330px;
 	margin-top:67px;
 	text-align: center;
 	.inner_banner_content {
@@ -1048,7 +1049,6 @@ footer {
 				width:100%;
 				height:auto;
 				display: block;
-				
 			}
 			span {
 				background:$bluelight;
@@ -1065,6 +1065,7 @@ footer {
 		ul {
 			margin-top:40px;
 			list-style: none;
+			line-height: 1;
 			 li {
 				font-family:$lato;
 				font-size:18px;
@@ -1075,7 +1076,7 @@ footer {
 				a {
 					color:#000;
 					display: block;
-					padding:15px 0;
+					padding:17px 0 15px;
 					cursor: pointer;
 				}
 				a:after {
@@ -1097,7 +1098,7 @@ footer {
 					li {
 						border:none;
 						text-transform: capitalize;
-						padding: 3px 0 3px 19px;
+						padding: 5px 0 5px 19px;
 						background:url(images/dash.jpg) top left no-repeat;
 						background-position:4px 11px;
 						a {
