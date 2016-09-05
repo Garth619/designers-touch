@@ -8,15 +8,7 @@ get_header(); ?>
 
 <div id="main">
 	
-	<div class="banner">
-		
-		<div class="inner_banner_content">
-			
-			<span>About Designer’s Touch</span>
-			
-		</div><!-- inner_banner_content -->
-		
-	</div><!-- banner -->
+	<?php include('banner.php');?>
 	
 	<div class="content_wrapper">
 		
