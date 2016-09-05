@@ -40,6 +40,8 @@
 		
 		<header>
 			
+			<div class="inner_header">
+			
 			<a href="">
 				<img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.png"/>
 			</a>
@@ -52,4 +54,6 @@
 				
 			</div><!-- menu_wrapper -->
 			
-		</header>	
+			</div><!-- inner_header -->
+			
+		</header>

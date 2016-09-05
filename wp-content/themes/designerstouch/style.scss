@@ -12,6 +12,7 @@ Author: Garrett Cullen
 a {outline: none;}
 a img {border:none}
 
+
 *, *:before, *:after {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -59,6 +60,8 @@ a.blue_button {
 	border-radius: 5px;
 	line-height: 1;
 }
+
+a {text-decoration: none;}
 
 
 /* Header */
@@ -291,10 +294,11 @@ header {
 	border-bottom:1px solid #b6b6b6;
 	span.large_header {
 		font-size:29px;
-		margin-bottom:25px;
+		margin-bottom:0px;
 		font-weight: 700;
 		font-family: $opensans;
 		color:$bluedark;
+		display: block;
 	}
 	.test_content {
 		margin-top:25px;
@@ -359,17 +363,31 @@ footer {
 	}
 	.copy {
 		
-		margin:15px 0;
-		display: inline-block;
+		margin:15px auto;
+		display: block;
 	}
 	.numbers {
-		
+		display: block;
+		margin:0px auto;
 	}
 }
 
 
 @media screen and (min-width: 575px) {
 	
+
+
+header {
+	.logo {
+		width:265px;
+	}
+	.menu_wrapper {
+		margin-top: 8px;
+	}
+}
+
+
+
 
 /* Slide Content */
 
@@ -384,10 +402,6 @@ footer {
 		height:400px;
 		.slide_content {
 			max-width:500px;
-			
-			span.slide_header {
-				
-			}
 			.number_wrapper {
 				margin-bottom:10px;
 				.numbers {
@@ -405,9 +419,6 @@ footer {
 
 
 .intro {
-	.intro_header {
-		
-	}
 	.intro_options_wrapper {
 		max-width: 550px;
 		margin:0 auto;
@@ -440,8 +451,6 @@ footer {
 		top:-4px;
 		left:9px;
 	}
-	span.large_header {
-	}
 	.four_warr_wrapper {
 		overflow: hidden;
 		.single_warr {
@@ -449,20 +458,49 @@ footer {
 			float:left;
 			margin-left:2.5%;
 			margin-right:2.5%;
-			span.circle {
-				
-			}
-			span.warr_description {
-				
+			
+			&:nth-of-type(3) {
+				border-bottom: none;
+				margin-bottom:0;
+				margin-top:0;
 			}
 			&:last-of-type {
-				border-bottom: 1px solid $greydark;
-				padding-bottom:35px;
+				margin-bottom:0;
+				margin-top:0;
 			}
 		}
 	}
 }
 
+
+/* Testimonials */
+
+
+.testimonials {
+	.test_content {
+		max-width:700px;
+	}
+}
+
+
+/* Review */
+
+.leave_review {
+	
+	span.large_header {
+		
+	}
+	.review_icons {
+		max-width:507px;
+		margin-left: auto;
+		margin-right: auto;
+		img {
+			display: inline-block;
+			margin:20px 10px;
+			
+		}
+	}
+}
 
 
     
@@ -470,6 +508,217 @@ footer {
 	
 	
 } /* Media Query */
+
+
+@media screen and (min-width: 1150px) {
+	
+	
+/* Header */
+
+
+header {
+	.inner_header {
+		max-width:1150px;
+		margin:0 auto;
+	}
+}
+
+
+
+/* Intro Section */
+
+
+.intro {
+	.intro_options_wrapper {
+		max-width: 1150px;
+		margin:0 auto;
+		.single_intro_options {
+			display: inline-block;
+			margin: 45px;
+		}
+	}
+}
+
+
+/* About Section */
+
+.about {
+	padding-top:70px;
+	padding-bottom:70px;
+	.about_slideshow {
+		.about_slide {
+			max-width:1050px;
+			margin:0 auto;
+			overflow: hidden;
+			.about_slide_content {
+				width:75%;
+				float:right;
+				max-width:100%;
+				text-align: left;
+				.large_header {
+					
+				}
+				p {
+					
+				}
+				p:last-of-type {
+					
+				}
+			}
+			.about_slide_image {
+				width:25%;
+				float:left;
+				img {
+					
+				}
+				span {
+					
+				}
+			}
+		}
+	}
+}
+
+
+
+/* Waranties */
+
+
+.warranties {
+	padding-top:75px;
+	padding-bottom:75px;
+	span.large_header {
+		
+	}
+	.four_warr_wrapper {
+		max-width:1200px;
+		margin:0 auto;
+		.single_warr {
+			width:25%;
+			margin:35px 0 0;
+			border-left:1px solid $greydark;
+			border-bottom: none;
+			span.circle {
+				
+			}
+			span.warr_description {
+				font-size:22px;
+			}
+			&:nth-of-type(3) {
+				margin:35px 0 0;
+			}
+			&:last-of-type {
+				margin:35px 0 0;
+				border-left:1px solid $greydark;
+				padding-bottom:35px;
+				border-right:1px solid $greydark;
+			}
+		}
+	}
+}
+
+
+/* Testimonials */
+
+
+.test_review_wrapper {
+	background:$greylight;
+	overflow: hidden;
+	padding:75px 0;
+	.inner_wrapper {
+		max-width:1150px;
+		margin:0 auto;
+	}
+}
+
+
+.testimonials {
+	width:55%;
+	float:left;
+	border-bottom:none;
+	background:none;
+	padding-top:0;
+	padding-bottom:0;
+	padding:0 60px;
+	span.large_header {
+		
+	}
+	.test_content {
+		
+		span.test {
+			
+		}
+		span.name {
+			
+		}
+	}
+}
+
+
+
+/* Review */
+
+.leave_review {
+	width:45%;
+	float:left;
+	border-left:1px solid #b6b6b6;
+	background:none;
+
+	padding-top:0;
+	padding-bottom:0;
+	span.large_header {
+		
+	}
+	.review_icons {
+		
+		img {
+			
+			
+		}
+	}
+}
+
+
+
+/* Footer */
+
+footer {
+	padding: 12px 0 6px;
+	overflow: hidden;
+	.inner_footer {
+		max-width:1150px;
+		margin:0 auto;
+		
+	}
+	a {
+			
+		}
+	.social_icons {
+		float:left;
+		width:8%;
+		img {
+			display: inline-block;
+		}
+	}
+	.copy {
+		width:28%;
+		margin: 0 17.5% 0 27.5%;
+		float:left;
+	
+	}
+	.footer_numbers {
+		width:19%;
+		margin:0px;
+		float:left;
+	}
+}
+
+	
+	
+	
+	
+} /* Media Query */
+
 
 
 

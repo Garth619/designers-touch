@@ -1,3 +1,8 @@
+<section class="test_review_wrapper">
+
+
+<div class="inner_wrapper">
+
 <section class="testimonials">
 		
 		
@@ -44,13 +49,19 @@
 		
 	</section><!-- leave_review -->
 	
+</div><!-- inner_wrapper -->
 	
 	
+</section><!-- test_review_wrapper -->
+
+
 	
 	
 </div><!-- main -->
 
 <footer>
+	
+	<div class="inner_footer">
 	
 	<div class="social_icons">
 		
@@ -79,10 +90,12 @@
 	
 	<span class="copy">&copy; Copyright by Designers Touch All Rights&nbsp;Reserved.</span>
 	
-	<span>Ky <a href="tel:5022674971">502 267 4971</a> | In <a href="tel:8129442267">812 944 2267</a></span>
+	<span class="footer_numbers">Ky <a href="tel:5022674971">502 267 4971</a> | In <a href="tel:8129442267">812 944 2267</a></span>
+	
+	</div>
 	
 	
-</footer>
+</footer><!-- inner_footer -->
 
 <?php wp_footer(); ?>
 </body>
