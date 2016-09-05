@@ -44,7 +44,7 @@
 			
 			<div class="inner_header">
 			
-			<a href="">
+			<a href="<?php bloginfo('url');?>">
 				<img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.png"/>
 			</a>
 			

@@ -177,9 +177,15 @@
 	});
 	
 	
+	// Sidebar 
 	
+	jQuery('.sidebar ul li > a').click(function(){
+		
+		jQuery(this).next('ul.sub-menu').slideToggle(200);
+		
+	});
 	
-	about_slide
+
 	
 </script>
 

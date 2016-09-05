@@ -910,9 +910,10 @@ footer {
 				width:100%;
 				height:auto;
 				display: block;
+				
 			}
 			span {
-				background:$orange;
+				background:$bluelight;
 				color:#fff;
 				display: block;
 				width:100%;
@@ -925,17 +926,19 @@ footer {
 		}
 		ul {
 			margin-top:40px;
-			li {
+			list-style: none;
+			 li {
 				font-family:$lato;
 				font-size:19px;
 				color:#000;
-				border-top:1px solid $greylight;
-				
+				border-top:1px solid $greydark;
+				text-transform: uppercase;
 			
 				a {
 					color:#000;
 					display: block;
 					padding:15px 0;
+					cursor: pointer;
 				}
 				a:after {
 					width: 0; 
@@ -948,9 +951,41 @@ footer {
 					position: relative;
 					top:7px;
 				}
+				ul.sub-menu {
+					color:#000;
+					margin-top:0;
+					margin-bottom:20px;
+					display: none;
+					li:before {
+						width:6px;
+						height:2px;
+						background:$orange;
+						content:"";
+						float:left;
+						margin-right:6px;
+						position: relative;
+						top:8px;
+					}
+					li {
+						border:none;
+						text-transform: capitalize;
+						padding:3px;
+						
+						a {
+							padding:0;
+						}
+						a:after {
+							content:"";
+							border: none;
+						}
+						a:hover {
+							color:$orange;
+						}
+					}
+				}
 			}
 			li:last-of-type {
-				border-bottom:1px solid $greylight;
+				border-bottom:1px solid $greydark;
 			}
 		}
 	}
