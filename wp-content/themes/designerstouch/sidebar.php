@@ -9,43 +9,7 @@
 		
 		</div><!-- sidebar_pic_wrapper -->
 		
-		<ul>
-			<li><a>Blinds</a>
-				<ul class="sub-menu">
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-				</ul>
-			</li>
-			<li><a>Blinds</a>
-				<ul class="sub-menu">
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-				</ul>
-			</li>
-			<li><a>Blinds</a>
-				<ul class="sub-menu">
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-				</ul>
-			</li>
-			<li><a>Blinds</a>
-				<ul class="sub-menu">
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-				</ul>
-			</li>
-			<li><a>Blinds</a>
-				<ul class="sub-menu">
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-					<li><a href="">Blinds</a></li>
-				</ul>
-			</li>
-		</ul>
+		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'sidebar' ) ); ?>
 		
 	
 	

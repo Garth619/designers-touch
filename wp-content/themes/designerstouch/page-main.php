@@ -28,7 +28,7 @@ get_header(); ?>
 				
 				</div><!-- number_wrapper -->
 				
-				<a href="" class="blue_button">Get Started</a>
+				<a href="<?php bloginfo('url');?>/contact" class="blue_button">Get Started</a>
 				
 			</div><!-- slide_content -->
 			
