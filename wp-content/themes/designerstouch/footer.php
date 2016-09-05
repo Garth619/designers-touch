@@ -8,6 +8,9 @@
 		
 		<span class="large_header">Client Testimonials</span><!-- large_header -->
 		
+		
+		<div class="test_slideshow">
+		
 		<div class="test_content">
 			
 			<span class="test">"This was the second time I have worked with Charlie.  He is great to work with.  He has a lot of experience.  He made suggestions and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommend him!"</span>
@@ -15,6 +18,31 @@
 			<span class="name">Name of Person</span><!-- name -->
 			
 		</div><!-- test_content -->
+			
+			<div class="test_content">
+			
+			<span class="test">"This was the second time I have worked with Charlie.  He is great to work with.  He has a lot of experience.  He made suggestions and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommens and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommens and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommend him!"</span>
+			
+			<span class="name">Name of Person2</span><!-- name -->
+			
+			</div><!-- test_content -->
+			
+			<div class="test_content">
+			
+			<span class="test">"This was the second time I have worked with Charlie.  He is great to work with.  He has a lot of experience.  He made suggestions and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  ns and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommeI had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommend him!"</span>
+			
+			<span class="name">Name of Person3</span><!-- name -->
+			
+			
+			
+		</div><!-- test_content -->
+		
+		</div><!-- test_slideshow -->
+		
+		<div class="test_buttons">
+			<div class="test_back"></div><!-- test_back -->
+			<div class="test_next"></div><!-- test_next -->
+		</div><!-- test_buttons -->
 		
 		
 	</section><!-- testimonials -->
@@ -88,7 +116,7 @@
 		
 	</div><!-- social_icons -->
 	
-	<span class="copy">&copy; Copyright by Designers Touch All Rights&nbsp;Reserved.</span>
+	<span class="copy">&copy; Copyright by Designer's Touch All Rights&nbsp;Reserved.</span>
 	
 	<span class="footer_numbers">Ky <a href="tel:5022674971">502 267 4971</a> | In <a href="tel:8129442267">812 944 2267</a></span>
 	
@@ -98,5 +126,63 @@
 </footer><!-- inner_footer -->
 
 <?php wp_footer(); ?>
+<script type="text/javascript" src="<?php bloginfo('template_directory');?>/slick-master/slick/slick.min.js"></script>
+
+
+<script type="text/javascript">
+	
+	jQuery(document).ready(function(){
+		
+		
+		// Top Slide
+		
+		jQuery('.slideshow').slick({
+			dots:true,
+			infinite: true,
+			autoplay: true,
+			fade: true,
+			arrows:true,
+			prevArrow:".back",
+			nextArrow:".next",
+			appendDots:".mydots"
+		});
+		
+		
+		// About Slide
+		
+		jQuery('.about_slideshow').slick({
+			dots:true,
+			infinite: true,
+			fade: true,
+			arrows:true,
+			prevArrow:".about_back",
+			nextArrow:".about_next",
+			appendDots:".mydots_about",
+			adaptiveHeight: true
+		});
+		
+		// Testimonial Slide
+		
+		jQuery('.test_slideshow').slick({
+			dots:false,
+			infinite: true,
+			fade: true,
+			arrows:true,
+			prevArrow:".test_back",
+			nextArrow:".test_next",
+			adaptiveHeight: true
+		}); 
+		
+		
+	});
+	
+	
+	
+	
+	about_slide
+	
+</script>
+
+
 </body>
 </html>

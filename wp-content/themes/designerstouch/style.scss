@@ -107,13 +107,60 @@ header {
 }
 
 
+
+
+.slideshow_wrapper {
+	.buttons {
+		text-align: center;
+		margin:-115px 0 0px;
+		position: relative;
+		z-index:20;
+		.back {
+			background:url(images/back.png) top left;
+			background-size:30px 30px;
+			width:30px;
+			height:30px;
+			cursor: pointer;
+			display: inline-block;
+		}
+		.next {
+			background:url(images/next.png) top left;
+			background-size:30px 30px;
+			width:30px;
+			height:30px;
+			cursor: pointer;
+			display: inline-block;
+		}
+	}
+	.mydots {
+		ul {
+			li {
+				margin:0 0 65px 0!important;
+				button:before {
+// 					content:"" !important;
+					color:#fff !important;
+					font-size:10px !important;
+					opacity: 1 !important;
+				}
+				
+			}
+			.slick-active button:before  {
+					color:yellow !important;
+				}
+		}
+	}
+	.slick-dots {
+		position:relative !important;	
+		bottom:0 !important;
+	}
 .slideshow {
 	.slide {
 		background:url(images/slide1.jpg) top left no-repeat;
 		background-size:cover;
 		width:100%;
-		height:320px;
+		height:420px;
 		text-align: center;
+		
 		.slide_content {
 			background:rgba(255, 255, 255, 0.8);
 			display: inline-block;
@@ -140,6 +187,7 @@ header {
 			}
 		}
 	}
+}
 }
 
 /* Intro Section */
@@ -197,14 +245,59 @@ header {
 
 .about {
 	width:100%;
-	background:url(images/aboutbg.jpg) top left no-repeat;
+	background:url(images/aboutbg.jpg) center center no-repeat;
 	background-size:cover;
 	text-align: center;	
 	padding:50px 25px;
+	.about_buttons {
+		text-align: center;
+	
+		position: relative;
+		z-index:20;
+		.about_back {
+			background:url(images/back.png) top left;
+			background-size:30px 30px;
+			width:30px;
+			height:30px;
+			cursor: pointer;
+			display: inline-block;
+		}
+		.about_next {
+			background:url(images/next.png) top left;
+			background-size:30px 30px;
+			width:30px;
+			height:30px;
+			cursor: pointer;
+			display: inline-block;
+		}
+	}
+	.mydots_about {
+		ul {
+			li {
+				margin:0 !important;
+				button:before {
+// 					content:"" !important;
+					color:#fff !important;
+					font-size:10px !important;
+					opacity: 1 !important;
+				}
+				
+			}
+			.slick-active button:before  {
+					color:yellow !important;
+				}
+		}
+	}
+	.slick-dots {
+		position:relative !important;	
+		bottom:0 !important;
+	}
+
 	.about_slideshow {
 		//background:rgba(255, 255, 255, 0.8);
 		color:#fff;
-		
+		max-width:1050px;
+		margin:0 auto;
 		line-height:1.2;
 		.about_slide_content {
 			.large_header {
@@ -226,7 +319,7 @@ header {
 		.about_slide_image {
 			margin-top:35px;
 			img {
-				
+				margin:0 auto;
 			}
 			span {
 				display: block;
@@ -292,6 +385,28 @@ header {
 	padding:50px 25px;
 	text-align: center;
 	border-bottom:1px solid #b6b6b6;
+	.test_buttons {
+		text-align: center;
+		position: relative;
+		margin-top:25px;
+		z-index:20;
+		.test_back {
+			background:url(images/back.png) top left;
+			background-size:30px 30px;
+			width:30px;
+			height:30px;
+			cursor: pointer;
+			display: inline-block;
+		}
+		.test_next {
+			background:url(images/next.png) top left;
+			background-size:30px 30px;
+			width:30px;
+			height:30px;
+			cursor: pointer;
+			display: inline-block;
+		}
+	}
 	span.large_header {
 		font-size:29px;
 		margin-bottom:0px;
@@ -392,9 +507,6 @@ header {
 /* Slide Content */
 
 
-#main {
-	
-}
 
 
 .slideshow {
@@ -525,6 +637,31 @@ header {
 
 
 
+
+/* Slide Content */
+
+
+
+
+.slideshow {
+	.slide {
+		.slide_content {
+			max-width:500px;
+			.number_wrapper {
+				margin-bottom:10px;
+				.numbers {
+					display:inline-block;
+					margin-left:10px;
+					margin-right:10px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
 /* Intro Section */
 
 
@@ -547,33 +684,16 @@ header {
 	padding-bottom:70px;
 	.about_slideshow {
 		.about_slide {
-			max-width:1050px;
-			margin:0 auto;
 			overflow: hidden;
 			.about_slide_content {
 				width:75%;
 				float:right;
 				max-width:100%;
 				text-align: left;
-				.large_header {
-					
-				}
-				p {
-					
-				}
-				p:last-of-type {
-					
-				}
 			}
 			.about_slide_image {
 				width:25%;
 				float:left;
-				img {
-					
-				}
-				span {
-					
-				}
 			}
 		}
 	}
@@ -639,7 +759,8 @@ header {
 	background:none;
 	padding-top:0;
 	padding-bottom:0;
-	padding:0 60px;
+	padding:0 60px 0 0;
+	border-right:1px solid #b6b6b6;
 	span.large_header {
 		
 	}
@@ -661,7 +782,7 @@ header {
 .leave_review {
 	width:45%;
 	float:left;
-	border-left:1px solid #b6b6b6;
+	
 	background:none;
 
 	padding-top:0;

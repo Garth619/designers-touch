@@ -7,7 +7,51 @@ get_header(); ?>
 
 <div id="main">
 	
+	
+	<section class="slideshow_wrapper">
+	
+	
 	<div class="slideshow">
+		
+		
+		
+		<div class="slide">
+			
+			<div class="slide_content">
+				
+				<span class="slide_header">Slide Title Here</span><!-- slide_header -->
+				
+				<div class="number_wrapper">
+				
+					<a class="numbers" href="tel:5022674971">Ky - 502 267 4971</a>
+					<a class="numbers" href="tel:8129442267">In - 812 944 2267</a>
+				
+				</div><!-- number_wrapper -->
+				
+				<a href="" class="blue_button">Get Started</a>
+				
+			</div><!-- slide_content -->
+			
+		</div><!-- slide -->
+		
+		<div class="slide">
+			
+			<div class="slide_content">
+				
+				<span class="slide_header">Slide Title Here</span><!-- slide_header -->
+				
+				<div class="number_wrapper">
+				
+					<a class="numbers" href="tel:5022674971">Ky - 502 267 4971</a>
+					<a class="numbers" href="tel:8129442267">In - 812 944 2267</a>
+				
+				</div><!-- number_wrapper -->
+				
+				<a href="" class="blue_button">Get Started</a>
+				
+			</div><!-- slide_content -->
+			
+		</div><!-- slide -->
 		
 		<div class="slide">
 			
@@ -30,6 +74,19 @@ get_header(); ?>
 		
 		
 	</div><!-- slideshow -->
+	
+	
+	<div class="buttons">
+		<div class="back"></div><!-- back -->
+		<div class="next"></div><!-- next -->
+	</div><!-- buttons -->
+	
+	<div class="mydots"></div><!-- mydots -->
+	
+	
+	</section><!-- slideshow_wrapper -->
+	
+	
 	
 	<section class="intro">
 		
@@ -56,7 +113,7 @@ get_header(); ?>
 					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
 				</a>
 				
-				<a class="intro_button" href="">Photo Gallery</a><!-- intro_button -->
+				<a class="intro_button" href="">Products</a><!-- intro_button -->
 				
 			</div><!-- single_intro_options -->
 			
@@ -66,7 +123,7 @@ get_header(); ?>
 					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
 				</a>
 				
-				<a class="intro_button" href="">Photo Gallery</a><!-- intro_button -->
+				<a class="intro_button" href="">Visit Our Blog</a><!-- intro_button -->
 				
 			</div><!-- single_intro_options -->
 			
@@ -76,7 +133,7 @@ get_header(); ?>
 					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
 				</a>
 				
-				<a class="intro_button" href="">Photo Gallery</a><!-- intro_button -->
+				<a class="intro_button" href="">Watch Video</a><!-- intro_button -->
 				
 			</div><!-- single_intro_options -->
 			
@@ -113,7 +170,69 @@ get_header(); ?>
 				
 			</div><!-- about_slide -->
 			
+			<div class="about_slide">
+				
+				<div class="about_slide_content">
+				
+					<span class="large_header">About2 Designer's Touch</span><!-- large_header -->
+				
+					<p>Exciting Windows! by Designer’s Touch expert designer, Charles Marshall, has over 40 years of experience designing custom window treatments in Floyds Knobs, IN and Louisville, KY.</p> 
+
+					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
+					
+					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
+				
+				</div><!-- about_slide_content -->
+				
+				<div class="about_slide_image">
+					
+					<img src="<?php bloginfo('template_directory');?>/images/charlie.jpg"/>
+					<span>Charlie Marshall</span>
+					
+				</div><!-- about_slide_image -->
+				
+				
+			</div><!-- about_slide -->
+			
+			<div class="about_slide">
+				
+				<div class="about_slide_content">
+				
+					<span class="large_header">About3 Designer's Touch</span><!-- large_header -->
+				
+					<p>Exciting Windows! by Designer’s Touch expert designer, Charles Marshall, has over 40 years of experience designing custom window treatments in Floyds Knobs, IN and Louisville, KY.</p> 
+
+					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
+					
+					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
+					
+					<p>Our head designer not only stays atop the window fashion trends, but he also creates them. His keen eye for detail and ability to capture your vision and make it into reality is what makes Exciting Windows! by Designer’s Touch a leader in the industry.</p>
+				
+				</div><!-- about_slide_content -->
+				
+				<div class="about_slide_image">
+					
+					<img src="<?php bloginfo('template_directory');?>/images/charlie.jpg"/>
+					<span>Charlie Marshall</span>
+					
+				</div><!-- about_slide_image -->
+				
+				
+			</div><!-- about_slide -->
+			
+			
+
+			
+			
 		</div><!-- about_slideshow -->
+		
+		
+		<div class="about_buttons">
+			<div class="about_back"></div><!-- about_back -->
+			<div class="about_next"></div><!-- about_next -->
+		</div><!-- about_buttons -->
+	
+	<div class="mydots_about"></div><!-- mydots -->
 		
 		
 	</section><!-- about -->

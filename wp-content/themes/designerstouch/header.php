@@ -31,6 +31,8 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:400,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/slick-master/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/slick-master/slick/slick-theme.css"/>
 <?php wp_head(); ?>
 </head>
 
