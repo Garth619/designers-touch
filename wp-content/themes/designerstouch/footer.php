@@ -185,6 +185,16 @@
 		
 	});
 	
+	
+	// Mobile Menu
+	
+	
+	jQuery('.menu_wrapper').click(function(){
+		
+		jQuery('.mobile_menu_list').slideToggle();
+		
+	});
+	
 
 	
 </script>

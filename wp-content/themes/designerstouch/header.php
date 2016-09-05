@@ -38,7 +38,7 @@
 
 <body <?php body_class(); ?>>
 
-				<?php // wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+				
 		
 		<header>
 			
@@ -59,3 +59,15 @@
 			</div><!-- inner_header -->
 			
 		</header>
+		
+		
+		<div class="mobile_menu_list">
+			
+			<div class="menu_list_inner">
+			
+				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+			
+			</div><!-- menu_list_inner -->
+			
+		</div><!-- mobile_menu_list -->
+		

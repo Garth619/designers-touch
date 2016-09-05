@@ -141,6 +141,36 @@ header {
 	}
 }
 
+.mobile_menu_list {
+	position: fixed;
+	top:50px;
+	left:0;
+	width:100%;
+	height:100vh;
+	background:#fff;
+	z-index:50;
+	overflow-y:scroll;
+	display: none;
+	.menu_list_inner {
+		text-align: center;
+		padding:10px 0px 0px;
+		margin-bottom:100px;
+		ul {
+			list-style: none;
+			li {
+				width:100%;
+				a {
+					font-size:20px;
+					display:block;
+					padding:15px 0;
+					border-top:1px solid $greydark;
+					color:#000;
+				}
+			}
+		}
+	}
+}
+
 
 /* Slide Content */
 
@@ -669,6 +699,10 @@ header {
 	.menu_wrapper {
 		margin-top: 8px;
 	}
+}
+
+.mobile_menu_list {
+	top: 67px;
 }
 
 
