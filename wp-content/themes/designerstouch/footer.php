@@ -120,10 +120,10 @@
 	
 	<span class="footer_numbers">Ky <a href="tel:5022674971">502 267 4971</a> | In <a href="tel:8129442267">812 944 2267</a></span>
 	
-	</div>
+	</div><!-- inner_footer -->
 	
 	
-</footer><!-- inner_footer -->
+</footer>
 
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/slick-master/slick/slick.min.js"></script>

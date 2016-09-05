@@ -5040,6 +5040,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/banner.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 103665,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/banner.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/banner.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/images\/bbb.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -5157,6 +5168,17 @@
 		"initialSize": 2599,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/next.png",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/next.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/pg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22221,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/pg.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/pg.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
