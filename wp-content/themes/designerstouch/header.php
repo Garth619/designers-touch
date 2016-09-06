@@ -56,13 +56,13 @@
 				
 			</div><!-- menu_wrapper -->
 			
-			</div><!-- inner_header -->
-			
 			<div class="desktop_nav">
 				
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 				
 			</div><!-- desktop_nav -->
+			
+			</div><!-- inner_header -->
 			
 		</header>
 		
