@@ -9,10 +9,6 @@
 
 get_header(); ?>
 
-
-
-
-
 <div id="main">
 	
 	<div class="content_wrapper">
