@@ -185,6 +185,14 @@
 		
 	});
 	
+	// Mobile Product Page
+	
+	jQuery('.mobile_product_menu ul li > a').click(function(){
+		
+		jQuery(this).next('ul.sub-menu').slideToggle(200);
+		
+	});
+	
 	
 	// Mobile Menu
 	

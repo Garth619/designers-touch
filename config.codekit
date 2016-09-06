@@ -7850,6 +7850,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/page-products.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/page-products.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/page-testimonials.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -8197,6 +8206,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/1363485068.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2373,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/1363485068.png",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/1363485068.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/1538818300.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -8373,6 +8393,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/245928827.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2636,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/245928827.png",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/245928827.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/25259765.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -8391,6 +8422,17 @@
 		"initialSize": 2535,
 		"inputAbbreviatedPath": "\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/293341353.png",
 		"outputAbbreviatedPath": "\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/293341353.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/305635850.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2542,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/305635850.png",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/gravity_forms\/0-ea3ee97641dfc1fe7f31ede9e9a46869\/305635850.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
