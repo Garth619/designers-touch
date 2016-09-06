@@ -21,6 +21,12 @@ get_header(); ?>
 			
 		</div><!-- content -->
 		
+		<div class="mobile_product_menu">
+			
+			<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'sidebar' ) ); ?>
+			
+		</div><!-- mobile_product_menu -->
+		
 		
 	</div><!-- content_wrapper -->
 

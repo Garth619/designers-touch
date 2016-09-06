@@ -16,7 +16,7 @@ get_header(); ?>
 		
 		<div class="gallery_wrapper">
 			
-			<a class="gallery_back" href="">Back to The Main Gallery Page</a>
+			<a class="gallery_back" href="<?php bloginfo('url');?>/gallery">Back to The Main Gallery Page</a>
 			
 			
 			<div class="single_gallery_wrapper">
@@ -29,7 +29,7 @@ get_header(); ?>
 				
 				<div class="gallery_content_wrapper">
 				
-					<span class="large_header">Arch Windows</span>
+					<span class="large_header">Picture Title</span>
 									
 				</div><!-- content_wrapper -->
 			
@@ -45,7 +45,7 @@ get_header(); ?>
 				
 				<div class="gallery_content_wrapper">
 				
-					<span class="large_header">Arch Windows</span>
+					<span class="large_header">Picture Title</span>
 				
 				</div><!-- content_wrapper -->
 			
@@ -61,7 +61,7 @@ get_header(); ?>
 				
 				<div class="gallery_content_wrapper">
 				
-					<span class="large_header">Arch Windows</span>
+					<span class="large_header">Picture Title</span>
 				
 				</div><!-- content_wrapper -->
 			
@@ -77,7 +77,7 @@ get_header(); ?>
 				
 				<div class="gallery_content_wrapper">
 				
-					<span class="large_header">Arch Windows</span>
+					<span class="large_header">Picture Title</span>
 				
 				</div><!-- content_wrapper -->
 			
@@ -93,7 +93,7 @@ get_header(); ?>
 				
 				<div class="gallery_content_wrapper">
 				
-					<span class="large_header">Arch Windows</span>
+					<span class="large_header">Picture Title</span>
 				
 				</div><!-- content_wrapper -->
 			
@@ -109,7 +109,7 @@ get_header(); ?>
 				
 				<div class="gallery_content_wrapper">
 				
-					<span class="large_header">Arch Windows</span>
+					<span class="large_header">Picture Title</span>
 				
 				</div><!-- content_wrapper -->
 			

@@ -80,6 +80,11 @@ a {text-decoration: none;}
 	.content {
 		font-size:18px;
 		line-height: 1.4;
+		overflow: hidden;
+		img {
+			max-width:100%;
+			height:auto;
+		}
 		h1,h2,h3,h4 {
 			margin-bottom:10px;
 		}
@@ -623,6 +628,7 @@ footer {
 		display: inline-block;
 		margin:20px;
 		max-width:300px;
+		vertical-align: top;
 		.gallery_img_wrapper {
 			img {
 				max-width:100%;
@@ -713,7 +719,18 @@ a.gallery_back {
 				}
 				input {
 					width:100%;
-					padding:6px;
+					padding:10px 6px;
+					border:1px solid $greydark;
+					font-size:18px;
+					font-weight: 300;
+				}
+				textarea {
+					font-family: $lato;
+					padding:10px 6px;
+					border:1px solid $greydark;
+					font-size:18px;
+					font-weight: 300;
+					width:100%;
 				}
 			}
 		}
@@ -767,6 +784,16 @@ body.page-id-110 {
 			margin:40px 0;
 			list-style: none;
 			line-height: 1;
+				li.categories {
+					border-top:none; 
+					ul {
+						li {
+							a:after {
+								border:none;
+							}
+						}
+					}
+				}
 			 li {
 				font-family:$lato;
 				font-size:18px;
@@ -819,11 +846,48 @@ body.page-id-110 {
 				border-bottom:1px solid $greydark;
 			}
 		}
-	
-
-
-	
 }
+
+
+/* Blog */
+
+
+.post {
+	margin-bottom:50px;
+	border-bottom:1px solid $greydark;
+	padding-bottom:50px;
+	.entry-meta {
+		margin-bottom:20px;
+	}
+}
+
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 12px;
+}
+
 
 
 @media screen and (min-width: 575px) {
@@ -1295,13 +1359,23 @@ footer {
 			margin-top:40px;
 			list-style: none;
 			line-height: 1;
+				li.categories {
+					border-top:none;
+					ul {
+						li {
+							a:after {
+								border:none;
+							}
+						}
+					}
+				}
 			 li {
 				font-family:$lato;
 				font-size:18px;
 				color:#000;
 				border-top:1px solid $greydark;
 				text-transform: uppercase;
-			
+				line-height:1.1;
 				a {
 					color:#000;
 					display: block;

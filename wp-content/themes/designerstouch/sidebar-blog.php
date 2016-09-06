@@ -9,6 +9,13 @@
 		
 		</div><!-- sidebar_pic_wrapper -->
 		
-		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'sidebar' ) ); ?>
 		
+		
+		<ul>
+		
+		<?php wp_list_categories(); ?>
+		
+		</ul>
+	
+	
 </div><!-- sidebar -->

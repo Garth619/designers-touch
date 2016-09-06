@@ -9,9 +9,16 @@
 
 get_header(); ?>
 
-		<div id="container">
-			<div id="content" role="main">
-
+	
+<div id="main">
+	
+	<div class="content_wrapper">
+		
+	<?php include('sidebar-blog.php');?>
+		
+		<div class="content">
+			
+			
 				<h1 class="page-title"><?php
 					printf( __( 'Tag Archives: %s', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 				?></h1>
@@ -24,8 +31,26 @@ get_header(); ?>
  */
 get_template_part( 'loop', 'tag' );
 ?>
-			</div><!-- #content -->
-		</div><!-- #container -->
+			
 
-<?php get_sidebar(); ?>
+		</div><!-- content -->
+		
+		<div class="mobile_product_menu">
+			
+			<ul>
+		
+				<?php wp_list_categories(); ?>
+		
+		</ul>
+			
+		</div><!-- mobile_product_menu -->
+		
+		
+	</div><!-- content_wrapper -->
+
+
 <?php get_footer(); ?>
+	
+	
+	
+		

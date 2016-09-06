@@ -9,20 +9,35 @@
 
 get_header(); ?>
 
-		<div id="container">
-			<div id="content" role="main">
+<div id="main">
+	
+	
+	
+	<div class="content_wrapper">
+		
+	<?php include('sidebar-blog.php');?>
+		
+		<div class="content">
+			
+			
+			
+			<?php get_template_part( 'loop', 'single' );?>
 
-			<?php
-			/*
-			 * Run the loop to output the post.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-single.php and that will be used instead.
-			 */
-			get_template_part( 'loop', 'single' );
-			?>
+		</div><!-- content -->
+		
+		<div class="mobile_product_menu">
+			
+			<ul>
+		
+				<?php wp_list_categories(); ?>
+		
+		</ul>
+			
+		</div><!-- mobile_product_menu -->
+		
+		
+	</div><!-- content_wrapper -->
 
-			</div><!-- #content -->
-		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
+

@@ -15,19 +15,49 @@
 
 get_header(); ?>
 
-		<div id="container">
-			<div id="content" role="main">
+	<div id="main">
+	
+	<div class="banner">
+		
+		<div class="inner_banner_content">
+			
+			<span class="large_header">Designer's Touch Blog</span>
+			
+				<div class="number_wrapper">
+				
+					<a class="numbers" href="tel:5022674971">Ky - 502 267 4971</a>
+					<a class="numbers" href="tel:8129442267">In - 812 944 2267</a>
+				
+				</div><!-- number_wrapper -->
+				
+				<a href="<?php bloginfo('url');?>/contact" class="blue_button">Get Started</a>
+			
+		</div><!-- inner_banner_content -->
+		
+	</div><!-- banner -->
+	
+	<div class="content_wrapper">
+		
+	<?php include('sidebar-blog.php');?>
+		
+		<div class="content">
+			
+			<?php get_template_part( 'loop', 'index' ); ?>
 
-			<?php
-			/*
-			 * Run the loop to output the posts.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-index.php and that will be used instead.
-			 */
-			get_template_part( 'loop', 'index' );
-			?>
-			</div><!-- #content -->
-		</div><!-- #container -->
+		</div><!-- content -->
+		
+		<div class="mobile_product_menu">
+			
+			<ul>
+		
+				<?php wp_list_categories(); ?>
+		
+		</ul>
+			
+		</div><!-- mobile_product_menu -->
+		
+		
+	</div><!-- content_wrapper -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -9,10 +9,19 @@
 
 get_header(); ?>
 
-		<div id="container">
-			<div id="content" role="main">
 
-<?php
+
+
+
+<div id="main">
+	
+	<div class="content_wrapper">
+		
+	<?php include('sidebar-blog.php');?>
+		
+		<div class="content">
+			
+			<?php
 	/*
 	 * Queue the first post, that way we know who
 	 * the author is when we try to get their name,
@@ -65,8 +74,30 @@ if ( get_the_author_meta( 'description' ) ) : ?>
 	 */
 	get_template_part( 'loop', 'author' );
 ?>
-			</div><!-- #content -->
-		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
+		</div><!-- content -->
+		
+		<div class="mobile_product_menu">
+			
+			<ul>
+		
+				<?php wp_list_categories(); ?>
+		
+		</ul>
+			
+		</div><!-- mobile_product_menu -->
+		
+		
+	</div><!-- content_wrapper -->
+
+
 <?php get_footer(); ?>
+
+
+
+
+
+
+
+		
+
