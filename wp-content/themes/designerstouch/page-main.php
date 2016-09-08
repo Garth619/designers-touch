@@ -15,11 +15,20 @@ get_header(); ?>
 		
 		
 		
-		<div class="slide">
+		
+		<?php if(get_field('slideshow')): ?>
+ 
+		
+			<?php while(has_sub_field('slideshow')): ?>
+			
+			
+			<?php $slide = wp_get_attachment_image_src(get_sub_field('image'), 'slides'); ?>
+      
+		<div class="slide" style="background:rgba(0, 0, 0, 0) url(<?php echo $slide[0]; ?>) no-repeat scroll left top / cover ">
 			
 			<div class="slide_content">
 				
-				<span class="slide_header">Slide Title Here</span><!-- slide_header -->
+				<span class="slide_header"><?php the_sub_field('slide_title');?></span><!-- slide_header -->
 				
 				<div class="number_wrapper">
 				
@@ -33,45 +42,21 @@ get_header(); ?>
 			</div><!-- slide_content -->
 			
 		</div><!-- slide -->
+ 
+    	
+ 
+			<?php endwhile; ?>
+ 
+
+		<?php endif; ?>
 		
-		<div class="slide">
-			
-			<div class="slide_content">
-				
-				<span class="slide_header">Slide Title Here</span><!-- slide_header -->
-				
-				<div class="number_wrapper">
-				
-					<a class="numbers" href="tel:5022674971">Ky - 502 267 4971</a>
-					<a class="numbers" href="tel:8129442267">In - 812 944 2267</a>
-				
-				</div><!-- number_wrapper -->
-				
-				<a href="" class="blue_button">Get Started</a>
-				
-			</div><!-- slide_content -->
-			
-		</div><!-- slide -->
 		
-		<div class="slide">
-			
-			<div class="slide_content">
-				
-				<span class="slide_header">Slide Title Here</span><!-- slide_header -->
-				
-				<div class="number_wrapper">
-				
-					<a class="numbers" href="tel:5022674971">Ky - 502 267 4971</a>
-					<a class="numbers" href="tel:8129442267">In - 812 944 2267</a>
-				
-				</div><!-- number_wrapper -->
-				
-				<a href="" class="blue_button">Get Started</a>
-				
-			</div><!-- slide_content -->
-			
-		</div><!-- slide -->
 		
+		
+		
+		
+		
+				
 		
 	</div><!-- slideshow -->
 	
