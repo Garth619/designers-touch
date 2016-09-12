@@ -1,4 +1,18 @@
+	
+	
+	<?php if(get_field('inner_banner')):?>
+	
+	
+	<?php $banner = wp_get_attachment_image_src(get_field('inner_banner'), 'innerbanner'); ?>
+  
+	<div class="banner" style="background:rgba(0, 0, 0, 0) url(<?php echo $banner[0]; ?>) no-repeat scroll center top / cover ">
+	
+	<?php else:?>
+	
 	<div class="banner">
+		
+		
+	<?php endif;?>
 		
 		<div class="inner_banner_content">
 			

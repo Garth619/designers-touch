@@ -17,6 +17,12 @@
 				<div class="test_back"></div><!-- test_back -->
 				<div class="test_next"></div><!-- test_next -->
 			</div><!-- test_buttons -->
+			
+			<div class="testimonials_gradient">
+			
+			<a href="<?php bloginfo('url');?>/testimonials">Read More</a>
+			
+		</div><!-- testimonials_gradient -->
 				
 			<div class="test_slideshow">
 			
@@ -37,6 +43,8 @@
 				
 				
 		<?php endif; ?>
+		
+		
 
 
 	</section><!-- testimonials -->
