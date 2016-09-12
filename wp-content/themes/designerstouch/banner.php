@@ -25,8 +25,14 @@
 				
 				</div><!-- number_wrapper -->
 				
-				<a href="<?php bloginfo('url');?>/contact" class="blue_button">Get Started</a>
+				
+				<?php if(!is_page(84)):?>
+				
+					<a href="<?php bloginfo('url');?>/contact" class="blue_button">Get Started</a>
+				
+				<?php endif;?>
 			
+		
 		</div><!-- inner_banner_content -->
 		
 	</div><!-- banner -->
