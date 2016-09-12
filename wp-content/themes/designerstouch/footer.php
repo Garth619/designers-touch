@@ -9,42 +9,36 @@
 		<span class="large_header">Client Testimonials</span><!-- large_header -->
 		
 		
-		<div class="test_slideshow">
 		
-		<div class="test_content">
-			
-			<span class="test">"This was the second time I have worked with Charlie.  He is great to work with.  He has a lot of experience.  He made suggestions and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommend him!"</span>
-			
-			<span class="name">Name of Person</span><!-- name -->
-			
-		</div><!-- test_content -->
-			
-			<div class="test_content">
-			
-			<span class="test">"This was the second time I have worked with Charlie.  He is great to work with.  He has a lot of experience.  He made suggestions and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommens and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommens and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommend him!"</span>
-			
-			<span class="name">Name of Person2</span><!-- name -->
-			
-			</div><!-- test_content -->
-			
-			<div class="test_content">
-			
-			<span class="test">"This was the second time I have worked with Charlie.  He is great to work with.  He has a lot of experience.  He made suggestions and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  ns and was very patient with me while deciding fabrics/ design.  He installed all of the products (blinds, shutters, and drapes) very well.  I had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommeI had a small issue with the shutter; he resolved it quickly and without problem.  I would work with Charlie again and I would recommend him!"</span>
-			
-			<span class="name">Name of Person3</span><!-- name -->
-			
-			
-			
-		</div><!-- test_content -->
+		<?php if(get_field('testimonials', 75)): ?>
 		
-		</div><!-- test_slideshow -->
-		
-		<div class="test_buttons">
-			<div class="test_back"></div><!-- test_back -->
-			<div class="test_next"></div><!-- test_next -->
-		</div><!-- test_buttons -->
-		
-		
+				
+			<div class="test_buttons">
+				<div class="test_back"></div><!-- test_back -->
+				<div class="test_next"></div><!-- test_next -->
+			</div><!-- test_buttons -->
+				
+			<div class="test_slideshow">
+			
+ 
+			<?php while(has_sub_field('testimonials', 75)): ?>
+ 
+				
+				<div class="test_content">
+			
+					<span class="name"><?php the_sub_field('name', 75);?></span><!-- name -->
+					<span class="test"><?php the_sub_field('testimonial', 75);?></span>
+			
+				</div><!-- test_content -->
+    		
+			<?php endwhile; ?>
+			
+			</div><!-- test_slideshow -->
+				
+				
+		<?php endif; ?>
+
+
 	</section><!-- testimonials -->
 	
 	<section class="leave_review">
@@ -126,18 +120,23 @@
 </footer>
 
 
+<?php if(is_page(4)):?>
+
 
 <div class="video_overlay_wrapper">
 	
 	<div class="video_inner_overlay">
 		
-		<div class='embed-container'><iframe src='https://www.youtube.com/embed/tpoNwrhqDt8' frameborder='0' allowfullscreen></iframe></div>
+		<span class="my_close">Close X</span><!-- my_close -->
+		
+		<div class='embed-container'><?php the_field('video');?></div>
 		
 	</div><!-- video_inner_overlay -->
 	
 </div><!-- video_overlay_wrapper -->
 
 
+<?php endif;?>
 
 
 <?php wp_footer(); ?>
@@ -185,11 +184,32 @@
 			arrows:true,
 			prevArrow:".test_back",
 			nextArrow:".test_next",
-			adaptiveHeight: true
-		}); 
+			responsive: [
+				{
+      		breakpoint: 1150,
+					settings: {
+						dots:false,
+						infinite: true,
+						fade: true,
+						arrows:true,
+						prevArrow:".test_back",
+						nextArrow:".test_next",
+						adaptiveHeight: true
+      		}
+    		}
+      ]
+			}); 
 		
 		
-	});
+		
+		
+		
+		
+		
+		 		
+		
+		
+
 	
 	
 	// Sidebar 
@@ -217,6 +237,25 @@
 		jQuery('.mobile_menu_list').slideToggle();
 		
 	});
+	
+	// Video Overlay
+	
+	jQuery('.single_intro_options:nth-of-type(4)').click(function() {
+		
+		jQuery('.video_overlay_wrapper').addClass('open');
+		
+	});
+	
+	jQuery('.my_close').click(function() {
+		
+		jQuery('.video_overlay_wrapper').removeClass('open');
+		
+	});
+	
+
+
+
+}); // Document Ready
 	
 
 	

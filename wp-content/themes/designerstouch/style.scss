@@ -298,8 +298,9 @@ header {
 				max-width:175px;
 				display: block;
 				margin: 0 auto 25px;
+				cursor: pointer;
 			}
-			a.intro_button {
+			.intro_button {
 				background:$orange;
 				color:#fff;
 				text-decoration: none;
@@ -310,11 +311,12 @@ header {
 				font-family: $lato;
 				font-size:20px;
 				transition:all .2s ease-in-out;
+				cursor: pointer;
 				&:hover {
 					background: $orangelight;
 				}
 			}
-			a.intro_button:after {
+			.intro_button:after {
 				width: 0; 
 				height: 0; 
 				border-top: 6px solid transparent;
@@ -422,10 +424,33 @@ header {
 .video_overlay_wrapper {
 	position: fixed;
 	top:0;
-	background:rgba(0, 0, 0, 0.5);
+	background:rgba(0, 0, 0, 0.8);
 	left:0;
 	width:100%;
 	height:100vh;
+	opacity:0;
+	visibility: hidden;
+	z-index: -10;
+	transition:all .2s ease-in-out;
+	.video_inner_overlay {
+		max-width:500px;
+		margin:10% auto 0;
+		.my_close {
+			color:#fff;
+			text-align: right;
+			display: inline-block;
+			margin-bottom:15px;
+			font-weight: bold;
+			font-size:22px;
+			cursor: pointer;
+		}
+	}
+}
+
+.video_overlay_wrapper.open {
+	z-index:500000;
+	opacity:1;
+	visibility: visible;
 }
 
 
@@ -484,7 +509,7 @@ header {
 
 .testimonials {
 	background:$greylight;
-	padding:50px 25px;
+	padding:50px 35px;
 	text-align: center;
 	border-bottom:1px solid #b6b6b6;
 	.test_buttons {
@@ -527,8 +552,9 @@ header {
 			display: block;
 		}
 		span.name {
-			margin-top:25px;
+			margin-bottom:10px;
 			display: block;
+			font-weight:bold;
 		}
 	}
 }
@@ -1238,6 +1264,8 @@ header {
 	padding-bottom:0;
 	padding:0 60px 0 0;
 	border-right:1px solid #b6b6b6;
+	height:340px;
+	overflow: hidden;
 	span.large_header {
 		
 	}
