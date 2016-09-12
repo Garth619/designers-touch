@@ -125,6 +125,21 @@
 	
 </footer>
 
+
+
+<div class="video_overlay_wrapper">
+	
+	<div class="video_inner_overlay">
+		
+		<div class='embed-container'><iframe src='https://www.youtube.com/embed/tpoNwrhqDt8' frameborder='0' allowfullscreen></iframe></div>
+		
+	</div><!-- video_inner_overlay -->
+	
+</div><!-- video_overlay_wrapper -->
+
+
+
+
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/slick-master/slick/slick.min.js"></script>
 

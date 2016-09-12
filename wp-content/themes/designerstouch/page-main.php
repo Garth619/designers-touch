@@ -84,34 +84,42 @@ get_header(); ?>
 			
 			<div class="single_intro_options">
 				
-				<a href="<?php bloginfo('url');?>/gallery">
-					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
+				<a href="<?php the_field('page_link');?>">
+					
+					<?php $box1 = wp_get_attachment_image_src(get_field('box_1'), 'mainpagebox'); ?>
+					<img src="<?php echo $box1[0]; ?>"/>
+				
 				</a>
 				
-				<a class="intro_button" href="<?php bloginfo('url');?>/gallery">Photo Gallery</a><!-- intro_button -->
+				<a class="intro_button" href="<?php the_field('page_link');?>"><?php the_field('box_1_title');?></a><!-- intro_button -->
 				
 			</div><!-- single_intro_options -->
 			
 			<div class="single_intro_options">
 				
-				<a href="<?php bloginfo('url');?>/products">
-					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
+				<a href="<?php the_field('page_link_2');?>">
+					
+					<?php $box2 = wp_get_attachment_image_src(get_field('box_2'), 'mainpagebox'); ?>
+					<img src="<?php echo $box2[0]; ?>"/>
+				
 				</a>
 				
-				<a class="intro_button" href="<?php bloginfo('url');?>/products">Products</a><!-- intro_button -->
+				<a class="intro_button" href="<?php the_field('page_link_2');?>"><?php the_field('box_2_title');?></a><!-- intro_button -->
 				
 			</div><!-- single_intro_options -->
 			
 			<div class="single_intro_options">
 				
-				<a href="<?php bloginfo('url');?>/blog">
-					<img src="<?php bloginfo('template_directory');?>/images/intro-test.jpg"/>
+				<a href="<?php the_field('page_link_3');?>">
+					
+					<?php $box3 = wp_get_attachment_image_src(get_field('box_3'), 'mainpagebox'); ?>
+					<img src="<?php echo $box3[0]; ?>"/>
+				
 				</a>
 				
-				<a class="intro_button" href="<?php bloginfo('url');?>/blog">Visit Our Blog</a><!-- intro_button -->
+				<a class="intro_button" href="<?php the_field('page_link_3');?>"><?php the_field('box_3_title');?></a><!-- intro_button -->
 				
-			</div><!-- single_intro_options -->
-			
+			</div><!-- single_intro_options -->			
 			<div class="single_intro_options">
 				
 				<a href="">
