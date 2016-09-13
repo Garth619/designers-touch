@@ -166,7 +166,8 @@
 			arrows:true,
 			prevArrow:".back",
 			nextArrow:".next",
-			appendDots:".mydots"
+			appendDots:".mydots",
+			pauseOnHover: false
 		});
 		
 		
