@@ -666,6 +666,28 @@ footer {
 /* Gallery Page */
 
 
+.slideshowlink {
+	display: none;
+}
+
+.ngg-album {
+	border-top:none !important;
+	border-left:none !important;
+	border-right:none !important;
+	padding-bottom:15px !important;
+	margin-bottom:15px !important;
+}
+
+
+.ngg-albumtitle a {
+	color:$bluelight !important;
+	text-decoration: none !important;
+	&:hover {
+		text-decoration: underline !important;
+	}
+}
+
+
 .gallery_wrapper {
 	text-align: center;
 	.single_gallery_wrapper {
