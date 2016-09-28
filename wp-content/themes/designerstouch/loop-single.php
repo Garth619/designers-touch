@@ -17,13 +17,11 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-				<div id="nav-above" class="navigation">
-					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'twentyten' ) . '</span> %title' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '</span>' ); ?></div>
-				</div><!-- #nav-above -->
-
+				
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h1 class="entry-title"><?php the_title(); ?></h1>
+					<h2 class="inner_page_header"><?php the_title();?></h2>
+			
+			<div class="inner_phone_number"><a href="tel:5022674971">Ky&nbsp;502.267.4971</a> &nbsp;|&nbsp; <a href="tel:8129442267">In&nbsp;812.944.2267</a></div>
 
 					<div class="entry-meta">
 						<?php twentyten_posted_on(); ?>

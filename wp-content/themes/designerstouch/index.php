@@ -42,6 +42,12 @@ get_header(); ?>
 		
 		<div class="content">
 			
+			
+			<h2 class="inner_page_header">Blog</h2>
+			
+			<div class="inner_phone_number"><a href="tel:5022674971">Ky&nbsp;502.267.4971</a> &nbsp;|&nbsp; <a href="tel:8129442267">In&nbsp;812.944.2267</a></div>
+			
+			
 			<?php get_template_part( 'loop', 'index' ); ?>
 
 		</div><!-- content -->
