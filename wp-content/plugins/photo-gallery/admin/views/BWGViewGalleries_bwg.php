@@ -428,16 +428,16 @@ class BWGViewGalleries_bwg {
           var td_alt = document.createElement('td');
           td_alt.setAttribute('class', "table_extra_large_col");
           tr.appendChild(td_alt);
-          var input_alt = document.createElement('input');
+          var input_alt = document.createElement('textarea');
           input_alt.setAttribute('id', "image_alt_text_" + bwg_j);
           input_alt.setAttribute('name', "image_alt_text_" + bwg_j);
-          input_alt.setAttribute('type', "text");
-          input_alt.setAttribute('size', "24");
+          input_alt.setAttribute('style', "resize: vertical; height: 54px;");
+          input_alt.setAttribute('rows', "2");
           if (is_embed && !is_direct_url) {
-            input_alt.setAttribute('value', files[i]['name']);
+            input_alt.innerHTML = files[i]['name'];
           }
           else {/*uploaded images and direct URLs of images only*/
-            input_alt.setAttribute('value', files[i]['filename']);
+            input_alt.innerHTML = files[i]['filename'];
           }
           td_alt.appendChild(input_alt);
 
@@ -458,7 +458,6 @@ class BWGViewGalleries_bwg {
           textarea_desc.setAttribute('id', "image_description_" + bwg_j);
           textarea_desc.setAttribute('name', "image_description_" + bwg_j);
           textarea_desc.setAttribute('rows', "2");
-          textarea_desc.setAttribute('cols', "20");
           textarea_desc.setAttribute('style', "resize:vertical;");
           if (is_embed && !is_direct_url) {
             textarea_desc.innerHTML = files[i]['description'];
@@ -479,12 +478,12 @@ class BWGViewGalleries_bwg {
           tr.appendChild(td_tag);
           var a_tag = document.createElement('a');
           a_tag.setAttribute('class', "button-small wd-btn wd-btn-primary wd-not-image thickbox thickbox-preview");
-          a_tag.setAttribute('title' , "<?php _e("Add tag", 'bwg_back'); ?>");
+          a_tag.setAttribute('title' , "<?php addslashes(_e("Add tag", 'bwg_back')); ?>");
           <?php 
           $query_url = wp_nonce_url( admin_url('admin-ajax.php'), 'addTags', 'bwg_nonce' );
           ?>
           a_tag.setAttribute('href', "<?php echo add_query_arg(array('action' => 'addTags', 'width' => '650', 'height' => '500', 'bwg_items_per_page' => $per_page), $query_url); ?>&image_id=" + bwg_j + "&TB_iframe=1");
-          a_tag.innerHTML = '<?php _e("Add tag", 'bwg_back'); ?>';
+          a_tag.innerHTML = '<?php addslashes(_e("Add tag", 'bwg_back')); ?>';
           td_tag.appendChild(a_tag);
           var div_tag = document.createElement('div');
           div_tag.setAttribute('class', "tags_div");
@@ -530,8 +529,8 @@ class BWGViewGalleries_bwg {
           j_int++;
           bwg_j = 'pr_' + j_int;
         }
-        jQuery("#show_hide_weights").val("<?php _e("Hide order column", 'bwg_back'); ?>");
-        jQuery("#show_hide_weights").attr('title',"<?php _e("Hide order column", 'bwg_back'); ?>");
+        jQuery("#show_hide_weights").val("<?php addslashes(_e("Hide order column", 'bwg_back')); ?>");
+        jQuery("#show_hide_weights").attr('title',"<?php addslashes(_e("Hide order column", 'bwg_back')); ?>");
         spider_show_hide_weights();
       }
     </script>
@@ -983,13 +982,13 @@ class BWGViewGalleries_bwg {
                   <input type="hidden" id="input_filetype_<?php echo $row_data->id; ?>" name="input_filetype_<?php echo $row_data->id; ?>" value="<?php echo $row_data->filetype; ?>" />
                 </td>
                 <td class="table_extra_large_col">
-                  <input size="24" type="text" id="image_alt_text_<?php echo $row_data->id; ?>" name="image_alt_text_<?php echo $row_data->id; ?>" value="<?php echo $row_data->alt; ?>" />
+                  <textarea rows="2" id="image_alt_text_<?php echo $row_data->id; ?>" name="image_alt_text_<?php echo $row_data->id; ?>" style="resize:vertical;"><?php echo $row_data->alt; ?></textarea>
                   <?php if ($option_row->thumb_click_action != 'open_lightbox') { ?>
                   <input size="24" type="text" id="redirect_url_<?php echo $row_data->id; ?>" name="redirect_url_<?php echo $row_data->id; ?>" value="<?php echo $row_data->redirect_url; ?>" />
                   <?php } ?>
                 </td>
                 <td class="table_extra_large_col">
-                  <textarea cols="20" rows="2" id="image_description_<?php echo $row_data->id; ?>" name="image_description_<?php echo $row_data->id; ?>" style="resize:vertical;"><?php echo $row_data->description; ?></textarea>
+                  <textarea rows="3" id="image_description_<?php echo $row_data->id; ?>" name="image_description_<?php echo $row_data->id; ?>" style="resize:vertical;"><?php echo $row_data->description; ?></textarea>
                 </td>
                 <td class="table_extra_large_col">
                   <?php

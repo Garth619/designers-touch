@@ -734,8 +734,8 @@ class BWGViewGalleryBox {
         data["<?php echo $key; ?>"] = [];
         data["<?php echo $key; ?>"]["number"] = <?php echo $key + 1; ?>;
         data["<?php echo $key; ?>"]["id"] = "<?php echo $image_row->id; ?>";
-        data["<?php echo $key; ?>"]["alt"] = "<?php echo str_replace(array("\r\n", "\n", "\r"), esc_html('<br />'), $image_row->alt); ?>";
-        data["<?php echo $key; ?>"]["description"] = "<?php echo str_replace(array("\r\n", "\n", "\r"), esc_html('<br />'), $image_row->description); ?>";
+        data["<?php echo $key; ?>"]["alt"] = "<?php echo addslashes(str_replace(array("\r\n", "\n", "\r"), esc_html('<br />'), $image_row->alt)); ?>";
+        data["<?php echo $key; ?>"]["description"] = "<?php echo addslashes(str_replace(array("\r\n", "\n", "\r"), esc_html('<br />'), $image_row->description)); ?>";
         <?php
         $image_resolution = explode(' x ', $image_row->resolution);
         if (is_array($image_resolution)) {
