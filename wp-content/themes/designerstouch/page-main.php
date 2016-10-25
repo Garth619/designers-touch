@@ -11,7 +11,7 @@ get_header(); ?>
 	<section class="slideshow_wrapper">
 	
 	
-	<div class="slideshow">
+	<div class="slideshow" style="display: none;">
 		
 		
 		
