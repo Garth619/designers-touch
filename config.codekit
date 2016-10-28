@@ -26196,6 +26196,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/orange.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 132870,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/orange.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/orange.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/images\/pg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -26203,6 +26214,17 @@
 		"initialSize": 22221,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/pg.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/pg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/phone-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1569,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/phone-icon.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/phone-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -26225,6 +26247,28 @@
 		"initialSize": 7719,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/thumbtac.png",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/thumbtac.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/video-banner.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 59130,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/video-banner.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/video-banner.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/video-banner.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 142881,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/video-banner.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/video-banner.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

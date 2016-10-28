@@ -8,72 +8,85 @@ get_header(); ?>
 <div id="main">
 	
 	
-	<section class="slideshow_wrapper">
+	<div class="new_top">
 	
-	
-	<div class="slideshow" style="display: none;">
 		
 		
-		
-		
-		<?php if(get_field('slideshow')): ?>
- 
-		
-			<?php while(has_sub_field('slideshow')): ?>
+		<div class="left_col_main">
 			
 			
-			<?php $slide = wp_get_attachment_image_src(get_sub_field('image'), 'slides'); ?>
-      
-		<div class="slide" style="background:rgba(0, 0, 0, 0) url(<?php echo $slide[0]; ?>) no-repeat scroll left top / cover ">
 			
-<!--
-			<div class="slide_content">
-				
-				<span class="slide_header"><?php the_sub_field('slide_title');?></span>
-				
-				<div class="number_wrapper">
-				
-					<a class="numbers" href="tel:5022674971">Ky - 502 267 4971</a>
-					<a class="numbers" href="tel:8129442267">In - 812 944 2267</a>
-				
-				</div>
-				
-				<a href="<?php bloginfo('url');?>/contact" class="blue_button">Get Started</a>
-				
-			</div>
--->
+		</div><!-- left_col_main -->
+		
+		
+		
+		<div class="right_col_main">
+		
+			<div class="contact_info newbox">
 			
-		</div><!-- slide -->
- 
-    	
- 
-			<?php endwhile; ?>
- 
-
-		<?php endif; ?>
-		
-		
-		
-		
-		
-		
-		
+				<span class="title">Call Today For a&nbsp;Quote</span>
+			
+				<span class="numbers">
+<!-- 					<img class="phone_icon" src="<?php bloginfo('template_directory');?>/images/phone-icon.png"/> -->
+					Ky <a href="tel:5022674971">502.267.4971</a> <br/>In <a href="tel:8129442267">812.944.2267</a>
+				</span>
+			
+			
+			</div><!-- contact_info -->
+			
+			
+			<div class="review_info newbox">
+			
+				<span class="title">Leave a Review</span>
+				
 				
 		
-	</div><!-- slideshow -->
+		
+		
+		<div class="review_icons">
+			
+			<a href="http://www.bbb.org/louisville/business-reviews/drapery-installation-service/designers-touch-in-floyds-knobs-in-2000333/#bbbonlineclick" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/bbb.png"/>
+			</a>
+			
+			<a href="http://metro-links.com/LouisvilleKentucky" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/louis.png"/>
+			</a>
+			
+			<a href="https://www.thumbtack.com/ky/louisville/window-treatments/" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/thumbtac.png"/>
+			</a>
+			
+			<a href="http://www.angieslist.com/companylist/us/in/floyds-knobs/exciting-windows-by-designers-touch-reviews-2353519.aspx?cid=ssabadge" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/al.png"/>
+			</a>
+			
+			<a href="http://www.houzz.com/pro/designerstouchin/custom-draperies-by-designers-touch" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/houzz.png"/>
+			</a>
+			
+		</div><!-- review_icons -->
+		
 	
-<!--
+			
+							
+			
+			</div><!-- review_info -->
+			
+			
+			<div class="new_video">
+				
+				<img src="<?php bloginfo('template_directory');?>/images/video-banner.jpg"/>
+				
+			</div><!-- new_video -->
+			
+			
+			
+			
+		
+		</div><!-- right_col_main -->
 	
-	<div class="buttons">
-		<div class="back"></div>
-		<div class="next"></div>
-	</div>
--->
-	
-	<div class="mydots"></div><!-- mydots -->
-	
-	
-	</section><!-- slideshow_wrapper -->
+	</div><!-- new_top -->
 	
 	
 	

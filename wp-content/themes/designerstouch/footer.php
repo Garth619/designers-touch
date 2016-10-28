@@ -249,7 +249,7 @@
 	
 	// Video Overlay
 	
-	jQuery('.single_intro_options:nth-of-type(4)').click(function() {
+	jQuery('.new_video').click(function() {
 		
 		jQuery('.video_overlay_wrapper').addClass('open');
 		
@@ -260,6 +260,14 @@
 		jQuery('.video_overlay_wrapper').removeClass('open');
 		
 	});
+	
+	
+	// Same Heights
+	
+	
+	var height = Math.max(jQuery(".left_col_main").height(), jQuery(".right_col_main").height());
+    jQuery(".left_col_main").height(height);
+    jQuery(".right_col_main").height(height);
 	
 
 

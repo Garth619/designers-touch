@@ -278,12 +278,80 @@ header {
 }
 }
 
+
+
+
+/* New Top */
+
+.new_top {
+// 	background: #fff;
+	text-align: center;
+	padding:0px 0px;
+	overflow: hidden;
+	
+	max-width:1350px;
+	margin:10px auto 0;
+	
+	.left_col_main {
+		display: none;
+	}
+	.right_col_main {
+		span.title {
+			color:#002a53;
+			font-size:27px;
+			font-family: "Open Sans",sans-serif;
+			font-weight: 600;
+			display: block;
+		}
+		.newbox {
+			background: #f6f6f6;
+			padding:30px;
+			
+		}
+		.contact_info {
+			span.numbers {
+				font-size:21px;
+				font-weight: 600;
+				line-height:1.6;
+				margin-top:15px;
+				display: inline-block;
+				a {
+					color:#4977d1;
+				}
+				img.phone_icon {
+					width:12px;
+				}
+			}
+		}
+		.review_info {
+			text-align: center;
+			
+			.review_icons {
+				margin-top:30px;
+				img {
+					display: block;
+					 margin: 0 auto 5px;
+				}
+			}
+		}
+		.new_video {
+			img {
+				max-width:100%;
+				height:auto;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+
+
 /* Intro Section */
 
 
 .intro {
 	text-align: center;
-	padding: 50px 25px 65px;
+	padding: 70px 25px 65px;
 	background: #fff;
 	.intro_header {
 		font-family: $opensans;
@@ -977,6 +1045,11 @@ header {
 
 
 
+
+
+
+
+
 /* Slide Content */
 
 
@@ -1120,6 +1193,77 @@ img.aligncenter {
 }
  
 
+	
+	
+} /* Media Query */
+
+
+@media screen and (min-width: 735px) {
+	
+	
+	
+	/* New Top */
+
+.new_top {
+	background:#fff;
+	padding:12px 12px 0;
+	.left_col_main {
+		background:url(images/orange.jpg) top center no-repeat;
+		background-size:cover;
+		width:60%;
+		float:left;
+		height:600px;
+		display: block;
+
+		
+	}
+	.right_col_main {
+		width:40%;
+		float:right;
+		padding-left:12px;
+		span.title {
+			
+		}
+		.newbox {
+			margin-bottom:12px;
+		}
+		.contact_info {
+			span.numbers {
+				
+				img.phone_icon {
+					
+				}
+			}
+		}
+		.review_info {
+			
+			.review_icons {
+				
+				img {
+					display: inline-block;
+					height:60px;
+				}
+			}
+		}
+		.new_video {
+			img {
+				width:100%;
+				vertical-align: top;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+	
+	
 	
 	
 } /* Media Query */
