@@ -139,15 +139,7 @@ get_header(); ?>
 			</div><!-- single_intro_options -->			
 			
 			
-			<div class="single_intro_options">
-				
-				<?php $box4 = wp_get_attachment_image_src(get_field('box_4'), 'mainpagebox'); ?>
-				<img src="<?php echo $box4[0]; ?>"/>
-				
-				
-				<span class="intro_button" href="<?php the_field('page_link_4');?>"><?php the_field('box_4_title');?></span><!-- intro_button -->
-				
-			</div><!-- single_intro_options -->			
+					
 			
 			
 		</div><!-- intro_options_wrapper -->

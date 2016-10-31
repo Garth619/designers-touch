@@ -1,9 +1,71 @@
 <section class="test_review_wrapper">
 
 
-<div class="inner_wrapper">
+<div class="inner_wrapper" style="overflow:hidden;">
 
-<section class="testimonials">
+
+	
+	
+	<?php if(is_front_page()):?>
+	
+	
+	
+	<section class="testimonials frontpage" style="width:100%;border:none;">
+		
+		
+		<span class="large_header">Client Testimonials</span><!-- large_header -->
+		
+		
+		
+		<?php if(get_field('testimonials', 75)): ?>
+		
+				
+			<div class="test_buttons">
+				<div class="test_back"></div><!-- test_back -->
+				<div class="test_next"></div><!-- test_next -->
+			</div><!-- test_buttons -->
+			
+			<div class="testimonials_gradient" style="width:100%";>
+			
+			<a href="<?php bloginfo('url');?>/testimonials">Read More</a>
+			
+		</div><!-- testimonials_gradient -->
+				
+			<div class="test_slideshow" style="max-width:880px;">
+			
+ 
+			<?php while(has_sub_field('testimonials', 75)): ?>
+ 
+				
+				<div class="test_content">
+			
+					<span class="name"><?php the_sub_field('name', 75);?></span><!-- name -->
+					<span class="test"><?php the_sub_field('testimonial', 75);?></span>
+			
+				</div><!-- test_content -->
+    		
+			<?php endwhile; ?>
+			
+			</div><!-- test_slideshow -->
+				
+				
+		<?php endif; ?>
+		
+		
+
+
+	</section><!-- testimonials -->
+	
+	
+	
+	
+	
+	<?php else: ?>
+	
+	
+	
+	
+	<section class="testimonials">
 		
 		
 		<span class="large_header">Client Testimonials</span><!-- large_header -->
@@ -49,6 +111,8 @@
 
 	</section><!-- testimonials -->
 	
+	
+	
 	<section class="leave_review">
 		
 		<span class="large_header">Leave a Review</span><!-- large_header -->
@@ -78,6 +142,14 @@
 		</div><!-- review_icons -->
 		
 	</section><!-- leave_review -->
+	
+	
+	
+	
+	<?php endif;?>
+	
+	
+	
 	
 </div><!-- inner_wrapper -->
 	

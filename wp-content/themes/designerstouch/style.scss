@@ -284,12 +284,12 @@ header {
 /* New Top */
 
 .new_top {
-// 	background: #fff;
+	background: #fff;
 	text-align: center;
 	padding:0px 0px;
 	overflow: hidden;
 	
-	max-width:1350px;
+	max-width:1200px;
 	margin:10px auto 0;
 	
 	.left_col_main {
@@ -306,6 +306,7 @@ header {
 		.newbox {
 			background: #f6f6f6;
 			padding:30px;
+			margin-bottom: 10px;
 			
 		}
 		.contact_info {
@@ -327,7 +328,8 @@ header {
 			text-align: center;
 			
 			.review_icons {
-				margin-top:30px;
+				 margin: 30px auto 0;
+				 max-width: 400px;
 				img {
 					display: block;
 					 margin: 0 auto 5px;
@@ -368,7 +370,7 @@ header {
 				-webkit-border-radius: 50%;
 				-moz-border-radius: 50%;
 				border-radius: 50%;
-				max-width:175px;
+				max-width:215px;
 				display: block;
 				margin: 0 auto 25px;
 				cursor: pointer;
@@ -1447,6 +1449,14 @@ header {
 	}
 }
 
+
+
+.testimonials.frontpage {
+	padding-right: 0 !important;
+	.testimonials_gradient {
+		width:100% !important;
+	}
+}
 
 .testimonials {
 	width:55%;
