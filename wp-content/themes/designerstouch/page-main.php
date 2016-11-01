@@ -37,7 +37,7 @@ get_header(); ?>
 			
 			<div class="review_info newbox">
 			
-				<span class="title">Leave a Review</span>
+				<span class="title">Leave a Review Below</span>
 				
 				
 		
