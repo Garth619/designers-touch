@@ -30825,6 +30825,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/designerstouch\/images\/google-plus-flat.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9468,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/google-plus-flat.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/google-plus-flat.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/designerstouch\/images\/houzz.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -30931,6 +30942,17 @@
 		"initialSize": 128850,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/slide1.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/slide1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/designerstouch\/images\/square-facebook-512.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6196,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/square-facebook-512.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/designerstouch\/images\/square-facebook-512.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

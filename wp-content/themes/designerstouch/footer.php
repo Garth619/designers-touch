@@ -139,6 +139,14 @@
 				<img src="<?php bloginfo('template_directory');?>/images/houzz.png"/>
 			</a>
 			
+			<a href="https://www.facebook.com/designerstouchwindowtreatments" target="_blank">
+				<img width="55" src="<?php bloginfo('template_directory');?>/images/square-facebook-512.png"/>
+			</a>
+			
+			<a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=designers%20touch%20ky&lrd=0x8869a0f199bb98ff:0xea94fe71a7dd9152,3," target="_blank">
+				<img width="60" src="<?php bloginfo('template_directory');?>/images/google-plus-flat.png"/>
+			</a>
+			
 		</div><!-- review_icons -->
 		
 	</section><!-- leave_review -->
@@ -165,7 +173,7 @@
 	
 	<div class="inner_footer">
 	
-	<div class="social_icons">
+	<div class="social_icons" style="opacity: 0;visibility: hidden;">
 		
 		<a href="">
 			<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
