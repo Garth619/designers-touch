@@ -8,7 +8,107 @@ get_header(); ?>
 <div id="main">
 	
 	
-	<div class="new_top">
+	
+	
+	
+	
+	<div class="new_top mobile">
+	
+		
+		
+		<div class="left_col_main">
+			
+			
+			
+		</div><!-- left_col_main -->
+		
+		
+		
+		<div class="right_col_main">
+		
+			<div class="contact_info newbox">
+			
+				<span class="title">Call Today For a&nbsp;Quote</span>
+			
+				<span class="numbers">
+<!-- 					<img class="phone_icon" src="<?php bloginfo('template_directory');?>/images/phone-icon.png"/> -->
+					Ky <a href="tel:5022674971">502.267.4971</a> <br/>In <a href="tel:8129442267">812.944.2267</a>
+				</span>
+			
+			
+			</div><!-- contact_info -->
+			
+			
+			<div class="review_info newbox">
+			
+				<span class="title">Leave a Review Below</span>
+				
+				
+		
+		
+		
+		<div class="review_icons">
+			
+			<a href="http://www.bbb.org/louisville/business-reviews/drapery-installation-service/designers-touch-in-floyds-knobs-in-2000333/#bbbonlineclick" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/bbb.png"/>
+			</a>
+			
+			<a href="http://metro-links.com/LouisvilleKentucky" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/louis.png"/>
+			</a>
+			
+			<a href="https://www.thumbtack.com/ky/louisville/window-treatments/" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/thumbtac.png"/>
+			</a>
+			
+			<a href="http://www.angieslist.com/companylist/us/in/floyds-knobs/exciting-windows-by-designers-touch-reviews-2353519.aspx?cid=ssabadge" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/al.png"/>
+			</a>
+			
+			<a href="http://www.houzz.com/pro/designerstouchin/custom-draperies-by-designers-touch" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/images/houzz.png"/>
+			</a>
+			
+			<a href="https://www.facebook.com/designerstouchwindowtreatments" target="_blank">
+				<img width="55" src="<?php bloginfo('template_directory');?>/images/square-facebook-512.png"/>
+			</a>
+			
+			<a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=designers%20touch%20ky&lrd=0x8869a0f199bb98ff:0xea94fe71a7dd9152,3," target="_blank">
+				<img width="60" src="<?php bloginfo('template_directory');?>/images/google-plus-flat.png"/>
+			</a>
+			
+		</div><!-- review_icons -->
+		
+	
+			
+							
+			
+			</div><!-- review_info -->
+			
+			
+			<div class="new_video">
+				
+				<img src="<?php bloginfo('template_directory');?>/images/video-banner.jpg"/>
+				
+			</div><!-- new_video -->
+			
+			
+			
+			
+		
+		</div><!-- right_col_main -->
+	
+	</div><!-- new_top -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="new_top desktop">
 	
 		
 		

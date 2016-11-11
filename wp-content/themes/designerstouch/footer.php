@@ -345,9 +345,9 @@
 	// Same Heights
 	
 	
-	var height = Math.max(jQuery(".left_col_main").height(), jQuery(".right_col_main").height());
-    jQuery(".left_col_main").height(height);
-    jQuery(".right_col_main").height(height);
+	var height = Math.max(jQuery(".new_top.desktop .left_col_main").height(), jQuery(".new_top.desktop .right_col_main").height());
+    jQuery(".new_top.desktop .left_col_main").height(height);
+    jQuery(".new_top.desktop .right_col_main").height(height);
 	
 
 

@@ -289,7 +289,9 @@ header {
 }
 }
 
-
+.new_top.desktop {
+	display:none;
+}
 
 
 /* New Top */
@@ -1217,6 +1219,15 @@ img.aligncenter {
 	
 	
 	/* New Top */
+	
+	.new_top.desktop {
+		display:block;
+	}
+	
+	.new_top.mobile {
+		display:none;
+	}
+
 
 .new_top {
 	background:#fff;
