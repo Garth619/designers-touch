@@ -32,7 +32,7 @@ get_header(); ?>
 			
 				<span class="numbers">
 <!-- 					<img class="phone_icon" src="<?php bloginfo('template_directory');?>/images/phone-icon.png"/> -->
-					Ky <a href="tel:5022674971">502.267.4971</a> <br/>In <a href="tel:8129442267">812.944.2267</a>
+					Ky <a href="tel:5022674971">502.267.4971</a> <br/>In <a href="tel:8129442267">812.944.2267</a><br/> <a href="mailto:charlie@designers-touch.com">charlie@designers-touch.com</a>
 				</span>
 			
 			
@@ -128,7 +128,7 @@ get_header(); ?>
 			
 				<span class="numbers">
 <!-- 					<img class="phone_icon" src="<?php bloginfo('template_directory');?>/images/phone-icon.png"/> -->
-					Ky <a href="tel:5022674971">502.267.4971</a> <br/>In <a href="tel:8129442267">812.944.2267</a>
+					Ky <a href="tel:5022674971">502.267.4971</a> <br/>In <a href="tel:8129442267">812.944.2267</a><br/><a href="mailto:charlie@designers-touch.com">charlie@designers-touch.com</a>
 				</span>
 			
 			

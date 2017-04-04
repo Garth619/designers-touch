@@ -21,7 +21,7 @@ get_header(); ?>
 			
 			<a class="gallery_back" href="<?php bloginfo('url');?>/gallery">Back to The Main Gallery Page</a>
 			
-			<div class="inner_phone_number" style="padding-top:10px;"><a href="tel:5022674971">Ky&nbsp;502.267.4971</a> &nbsp;|&nbsp; <a href="tel:8129442267">In&nbsp;812.944.2267</a></div>
+			<div class="inner_phone_number" style="padding-top:10px;"><a href="tel:5022674971">Ky&nbsp;502.267.4971</a> &nbsp;|&nbsp; <a href="tel:8129442267">In&nbsp;812.944.2267</a> | <a href="mailto:charlie@designers-touch.com">charlie@designers-touch.com</a></div>
 			
 			<?php get_template_part( 'loop', 'page' );?>
 			

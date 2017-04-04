@@ -200,7 +200,7 @@
 	
 	<span class="copy">&copy; Copyright by Designer's Touch All Rights&nbsp;Reserved.</span>
 	
-	<span class="footer_numbers">Ky <a href="tel:5022674971">502 267 4971</a> | In <a href="tel:8129442267">812 944 2267</a></span>
+	<span class="footer_numbers">Ky <a href="tel:5022674971">502 267 4971</a> | In <a href="tel:8129442267">812 944 2267</a> | <a href="mailto:charlie@designers-touch.com">charlie@designers-touch.com</a></span>
 	
 	</div><!-- inner_footer -->
 	

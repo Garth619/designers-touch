@@ -21,7 +21,7 @@
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h2 class="inner_page_header"><?php the_title();?></h2>
 			
-			<div class="inner_phone_number"><a href="tel:5022674971">Ky&nbsp;502.267.4971</a> &nbsp;|&nbsp; <a href="tel:8129442267">In&nbsp;812.944.2267</a></div>
+			<div class="inner_phone_number"><a href="tel:5022674971">Ky&nbsp;502.267.4971</a> &nbsp;|&nbsp; <a href="tel:8129442267">In&nbsp;812.944.2267</a> | <a href="mailto:charlie@designers-touch.com">charlie@designers-touch.com</a></div>
 
 					<div class="entry-meta">
 						<?php twentyten_posted_on(); ?>
