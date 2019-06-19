@@ -1,54 +1,63 @@
 <?php
+/**
+ * Class A_DataMapper_Factory
+ * @mixin C_Component_Factory
+ * @adapts I_Component_Factory
+ */
 class A_DataMapper_Factory extends Mixin
 {
-    public function datamapper_model($mapper, $properties = array(), $context = FALSE)
+    function datamapper_model($mapper, $properties = array(), $context = FALSE)
     {
         return new C_DataMapper_Model($mapper, $properties = array(), $context);
     }
-    public function datamapper($object_name, $context = FALSE)
+    function datamapper($object_name, $context = FALSE)
     {
         return new C_DataMapper($object_name, $context);
     }
-    public function custom_table_datamapper($object_name, $context = FALSE)
+    function custom_table_datamapper($object_name, $context = FALSE)
     {
         return new C_CustomTable_DataMapper_Driver($object_name, $context);
     }
-    public function custom_post_datamapper($object_name, $context = FALSE)
+    function custom_post_datamapper($object_name, $context = FALSE)
     {
         return new C_CustomPost_DataMapper_Driver($object_name, $context);
     }
 }
+/**
+ * Provides instance methods for C_CustomPost_DataMapper_Driver
+ * @mixin C_CustomPost_DataMapper_Driver
+ */
 class Mixin_CustomPost_DataMapper_Driver extends Mixin
 {
     /**
      * Returns a list of querable table columns for posts
      * @return array
      */
-    public function _get_querable_table_columns()
+    function _get_querable_table_columns()
     {
         return array('name', 'author', 'date', 'title', 'modified', 'menu_order', 'parent', 'ID', 'rand', 'comment_count');
     }
     /**
      * Used to select which fields should be returned. NOT currently used by
      * this implementation of the datamapper driver
-     * @param type $fields
+     * @param string $fields
      * @return C_DataMapper_Driver_Base
      */
-    public function select($fields = '*')
+    function select($fields = '*')
     {
         $this->object->_query_args = array('post_type' => $this->object->get_object_name(), 'paged' => FALSE, 'fields' => $fields, 'post_status' => 'any', 'datamapper' => TRUE, 'posts_per_page' => -1, 'is_select' => TRUE, 'is_delete' => FALSE);
         return $this->object;
     }
     /**
      * Specifies an order clause
-     * @param type $order_by
-     * @param type $direction
+     * @param string $order_by
+     * @param string $direction
      * @return C_DataMapper_Driver_Base
      */
-    public function order_by($order_by, $direction = 'ASC')
+    function order_by($order_by, $direction = 'ASC')
     {
         // Make an exception for the rand() method
-        $order_by = preg_replace('/rand\\(\\s*\\)/', 'rand', $order_by);
+        $order_by = preg_replace("/rand\\(\\s*\\)/", 'rand', $order_by);
         if (in_array($order_by, $this->object->_get_querable_table_columns())) {
             $this->object->_query_args['orderby'] = $order_by;
         } else {
@@ -61,11 +70,11 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
     }
     /**
      * Specifies a limit and optional offset
-     * @param integer $max
-     * @param integer $offset
-     * @return C_DataMapper_Driver_Base
+     * @param int $max
+     * @param int|bool $offset (optional)
+     * @return object
      */
-    public function limit($max, $offset = FALSE)
+    function limit($max, $offset = FALSE)
     {
         if ($max) {
             $this->object->_query_args['paged'] = TRUE;
@@ -81,8 +90,9 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
     /**
      * Specifies a list of columns to group by
      * @param array|string $columns
+     * @return object
      */
-    public function group_by($columns = array())
+    function group_by($columns = array())
     {
         if (!isset($this->object->_query_args['group_by_columns'])) {
             $this->object->_query_args['group_by_columns'] = $columns;
@@ -96,7 +106,7 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * @param array $where_clauses
      * @param string $join
      */
-    public function _add_where_clause($where_clauses, $join)
+    function _add_where_clause($where_clauses, $join)
     {
         foreach ($where_clauses as $clause) {
             // $clause => array(
@@ -208,10 +218,11 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
     }
     /**
      * Destroys/deletes an entity from the database
-     * @param stdObject|C_DataMapper_Model $entity
-     * @return type
+     * @param object|C_DataMapper_Model $entity
+     * @param bool $skip_trash (optional) Default = true
+     * @return bool
      */
-    public function destroy($entity, $skip_trash = TRUE)
+    function destroy($entity, $skip_trash = TRUE)
     {
         $retval = FALSE;
         $key = $this->object->get_primary_key_column();
@@ -237,7 +248,7 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * @param boolean $model
      * @return \stdClass
      */
-    public function convert_post_to_entity($post, $model = FALSE)
+    function convert_post_to_entity($post, $model = FALSE)
     {
         $entity = new stdClass();
         // Unserialize the post_content_filtered field
@@ -267,10 +278,10 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
     }
     /**
      * Converts an entity to a post
-     * @param type $entity
-     * @return type
+     * @param object $entity
+     * @return object
      */
-    public function _convert_entity_to_post($entity)
+    function _convert_entity_to_post($entity)
     {
         // Was a model passed instead of an entity?
         $post = $entity;
@@ -311,7 +322,7 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * @global wpdb $wpdb
      * @return wpdb
      */
-    public function _wpdb()
+    function _wpdb()
     {
         global $wpdb;
         return $wpdb;
@@ -320,7 +331,7 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * Flush and update all postmeta for a particular post
      * @param int $post_id
      */
-    public function _flush_and_update_postmeta($post_id, $entity, $omit = array())
+    function _flush_and_update_postmeta($post_id, $entity, $omit = array())
     {
         // We need to insert post meta data for each property
         // Unfortunately, that means flushing all existing postmeta
@@ -344,15 +355,16 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
             if (is_array($value) or is_object($value)) {
                 $value = $this->object->serialize($value);
             }
-            $sql_parts[] = $wpdb->prepare('(%s, %s, %s)', $post_id, $key, $value);
+            $sql_parts[] = $wpdb->prepare("(%s, %s, %s)", $post_id, $key, $value);
         }
         $wpdb->query("INSERT INTO {$wpdb->postmeta} (post_id, meta_key, meta_value) VALUES " . implode(',', $sql_parts));
     }
     /**
      * Saves an entity to the database
-     * @param stdObject $entity
+     * @param object $entity
+     * @return int Post ID
      */
-    public function _save_entity($entity)
+    function _save_entity($entity)
     {
         $post = $this->object->_convert_entity_to_post($entity);
         $primary_key = $this->object->get_primary_key_column();
@@ -378,22 +390,22 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * Determines whether the current statement is SELECT
      * @return boolean
      */
-    public function is_select_statement()
+    function is_select_statement()
     {
         return isset($this->object->_query_args['is_select']) && $this->object->_query_args['is_select'];
     }
     /**
      * Determines whether the current statement is DELETE
-     * @return type
+     * @return bool
      */
-    public function is_delete_statement()
+    function is_delete_statement()
     {
         return isset($this->object->_query_args['is_delete']) && $this->object->_query_args['is_delete'];
     }
     /**
      * Starts a new DELETE statement
      */
-    public function delete()
+    function delete()
     {
         $this->object->select();
         $this->object->_query_args['is_select'] = FALSE;
@@ -402,10 +414,12 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
     }
     /**
      * Runs the query
-     * @param  string $sql optionally run the specified query
+     * @param string|bool $sql (optional) Run the specified query
+     * @param object|bool $model (optional)
+     * @param bool $convert_to_entities (optional) Default = true
      * @return array
      */
-    public function run_query($sql = FALSE, $model = FALSE, $convert_to_entities = TRUE)
+    function run_query($sql = FALSE, $model = FALSE, $convert_to_entities = TRUE)
     {
         $retval = array();
         $results = array();
@@ -438,7 +452,7 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
             if ($this->is_select_statement()) {
                 $this->object->cache($cache_key, $results);
             }
-            remove_action('pre_get_posts', array(&$this, 'set_query_args'), PHP_INT_MAX - 1, 1);
+            remove_action('pre_get_posts', array(&$this, 'set_query_args'), PHP_INT_MAX - 1);
         }
         // Convert the result
         if ($convert_to_entities) {
@@ -459,7 +473,7 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * plugin overrides our query
      * @param $query
      */
-    public function set_query_args($query)
+    function set_query_args($query)
     {
         if ($query->get('datamapper')) {
             $query->query_vars = $this->object->_query_args;
@@ -469,10 +483,11 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
     }
     /**
      * Fetches the last row
-     * @param array $conditions
-     * @return C_DataMapper_Entity
+     * @param array $conditions (optional)
+     * @param object|bool $model (optional)
+     * @return object
      */
-    public function find_last($conditions = array(), $model = FALSE)
+    function find_last($conditions = array(), $model = FALSE)
     {
         $retval = NULL;
         // Get row number for the last row
@@ -498,7 +513,7 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * Returns the number of total records/entities that exist
      * @return int
      */
-    public function count()
+    function count()
     {
         $this->object->select($this->object->get_primary_key_column());
         $retval = $this->object->run_query(FALSE, FALSE, FALSE);
@@ -509,7 +524,7 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * @param stdClass $entity
      * @return string
      */
-    public function get_post_title($entity)
+    function get_post_title($entity)
     {
         return "Untitled {$this->object->get_object_name()}";
     }
@@ -518,26 +533,31 @@ class Mixin_CustomPost_DataMapper_Driver extends Mixin
      * @param stdClass $entity
      * @return string
      */
-    public function get_post_excerpt($entity)
+    function get_post_excerpt($entity)
     {
         return '';
     }
 }
+/**
+ * Class C_DataMapper_Driver_Base
+ * @mixin Mixin_DataMapper_Driver_Base
+ * @implements I_DataMapper_Driver
+ */
 class C_DataMapper_Driver_Base extends C_Component
 {
-    public $_object_name;
-    public $_model_factory_method = FALSE;
-    public $_columns = array();
-    public $_table_columns = array();
-    public $_serialized_columns = array();
-    public function define($object_name = FALSE, $context = FALSE)
+    var $_object_name;
+    var $_model_factory_method = FALSE;
+    var $_columns = array();
+    var $_table_columns = array();
+    var $_serialized_columns = array();
+    function define($object_name = FALSE, $context = FALSE)
     {
         parent::define($context);
         $this->add_mixin('Mixin_DataMapper_Driver_Base');
         $this->implement('I_DataMapper_Driver');
         $this->_object_name = $object_name;
     }
-    public function initialize()
+    function initialize()
     {
         parent::initialize();
         $this->_cache = array();
@@ -550,7 +570,7 @@ class C_DataMapper_Driver_Base extends C_Component
      * Gets the object name
      * @return string
      */
-    public function get_object_name()
+    function get_object_name()
     {
         return $this->_object_name;
     }
@@ -559,36 +579,49 @@ class C_DataMapper_Driver_Base extends C_Component
      * @global string $table_prefix
      * @return string
      */
-    public function get_table_name()
+    function get_table_name()
     {
         global $table_prefix;
-        return apply_filters('ngg_datamapper_table_name', $table_prefix . $this->_object_name, $this->_object_name);
+        global $wpdb;
+        $prefix = $table_prefix;
+        if ($wpdb != null && $wpdb->prefix != null) {
+            $prefix = $wpdb->prefix;
+        }
+        return apply_filters('ngg_datamapper_table_name', $prefix . $this->_object_name, $this->_object_name);
     }
     /**
-     * Looks up using SQL the columns existing in the database
+     * Looks up using SQL the columns existing in the database, result is cached
      */
-    public function lookup_columns()
+    function lookup_columns()
     {
         // Avoid doing multiple SHOW COLUMNS if we can help it
         $key = C_Photocrati_Transient_Manager::create_key('col_in_' . $this->get_table_name(), 'columns');
         $this->_table_columns = C_Photocrati_Transient_Manager::fetch($key, FALSE);
         if (!$this->_table_columns) {
-            global $wpdb;
-            $this->_table_columns = array();
-            $sql = "SHOW COLUMNS FROM `{$this->get_table_name()}`";
-            foreach ($wpdb->get_results($sql) as $row) {
-                $this->_table_columns[] = $row->Field;
-            }
-            C_Photocrati_Transient_Manager::update($key, $this->_table_columns);
+            $this->object->update_columns_cache();
         }
         return $this->_table_columns;
     }
     /**
+     * Looks up using SQL the columns existing in the database
+     */
+    function update_columns_cache()
+    {
+        $key = C_Photocrati_Transient_Manager::create_key('col_in_' . $this->get_table_name(), 'columns');
+        global $wpdb;
+        $this->_table_columns = array();
+        $sql = "SHOW COLUMNS FROM `{$this->get_table_name()}`";
+        foreach ($wpdb->get_results($sql) as $row) {
+            $this->_table_columns[] = $row->Field;
+        }
+        C_Photocrati_Transient_Manager::update($key, $this->_table_columns);
+    }
+    /**
      * Determines whether a column is present for the table
      * @param string $column_name
-     * @return string
+     * @return bool
      */
-    public function has_column($column_name)
+    function has_column($column_name)
     {
         if (empty($this->object->_table_columns)) {
             $this->object->lookup_columns();
@@ -599,14 +632,14 @@ class C_DataMapper_Driver_Base extends C_Component
      * Sets the name of the factory method used to create a model for this entity
      * @param string $method_name
      */
-    public function set_model_factory_method($method_name)
+    function set_model_factory_method($method_name)
     {
         $this->_model_factory_method = $method_name;
     }
     /**
      * Gets the name of the factory method used to create a model for this entity
      */
-    public function get_model_factory_method()
+    function get_model_factory_method()
     {
         return $this->_model_factory_method;
     }
@@ -614,7 +647,7 @@ class C_DataMapper_Driver_Base extends C_Component
      * Gets the name of the primary key column
      * @return string
      */
-    public function get_primary_key_column()
+    function get_primary_key_column()
     {
         return $this->_primary_key_column;
     }
@@ -622,17 +655,17 @@ class C_DataMapper_Driver_Base extends C_Component
      * Gets the class name of the driver used
      * @return string
      */
-    public function get_driver_class_name()
+    function get_driver_class_name()
     {
         return get_called_class();
     }
-    public function cache($key, $results)
+    function cache($key, $results)
     {
         if ($this->object->_use_cache) {
             $this->_cache[$key] = $results;
         }
     }
-    public function get_from_cache($key, $default = NULL)
+    function get_from_cache($key, $default = NULL)
     {
         if ($this->object->_use_cache && isset($this->_cache[$key])) {
             return $this->_cache[$key];
@@ -640,24 +673,32 @@ class C_DataMapper_Driver_Base extends C_Component
             return $default;
         }
     }
+    function flush_query_cache()
+    {
+        $this->_cache = array();
+    }
 }
+/**
+ * Provides instance methods for C_CustomTable_DataMapper_Driver
+ * @mixin C_CustomTable_DataMapper_Driver
+ */
 class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
 {
     /**
      * Gets the name of the primary key column
      * @return string
      */
-    public function get_primary_key_column()
+    function get_primary_key_column()
     {
         return $this->object->_primary_key_column;
     }
     /**
      * Selects which fields to collect from the table.
-     * NOTE: Not protected from SQL injection - DO NOT let your users
-     * specify DB columns
+     * NOTE: Not protected from SQL injection - DO NOT let your users specify DB columns
      * @param string $fields
+     * @return object
      */
-    public function select($fields = NULL)
+    function select($fields = NULL)
     {
         // Create a fresh slate
         $this->object->_init();
@@ -671,26 +712,26 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
      * Determines whether we're going to execute a SELECT statement
      * @return boolean
      */
-    public function is_select_statement()
+    function is_select_statement()
     {
         return $this->object->_select_clause ? TRUE : FALSE;
     }
     /**
      * Determines if we're going to be executing a DELETE statement
-     * @return type
+     * @return bool
      */
-    public function is_delete_statement()
+    function is_delete_statement()
     {
         return $this->object->_delete_clause ? TRUE : FALSE;
     }
     /**
      * Start a delete statement
      */
-    public function delete()
+    function delete()
     {
         // Create a fresh slate
         $this->object->_init();
-        $this->object->_delete_clause = 'DELETE';
+        $this->object->_delete_clause = "DELETE";
         return $this->object;
     }
     /**
@@ -698,11 +739,12 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
      * This method may be used multiple of times to order by more than column
      * @param $order_by
      * @param $direction
+     * @return object
      */
-    public function order_by($order_by, $direction = 'ASC')
+    function order_by($order_by, $direction = 'ASC')
     {
         // We treat the rand() function as an exception
-        if (preg_match('/rand\\(\\s*\\)/', $order_by)) {
+        if (preg_match("/rand\\(\\s*\\)/", $order_by)) {
             $order = 'rand()';
         } else {
             $order_by = $this->object->_clean_column($order_by);
@@ -720,13 +762,14 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
      * Specifies a limit and optional offset
      * @param integer $max
      * @param integer $offset
+     * @return object
      */
-    public function limit($max, $offset = 0)
+    function limit($max, $offset = 0)
     {
         if ($offset) {
-            $limit = $this->_wpdb()->prepare('LIMIT %d, %d', max(0, $offset), $max);
+            $limit = $this->_wpdb()->prepare("LIMIT %d, %d", max(0, $offset), $max);
         } else {
-            $limit = $this->_wpdb()->prepare('LIMIT %d', max(0, $max));
+            $limit = $this->_wpdb()->prepare("LIMIT %d", max(0, $max));
         }
         if ($limit) {
             $this->object->_limit_clause = $limit;
@@ -736,8 +779,9 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     /**
      * Specifics a group by clause for one or more columns
      * @param array|string $columns
+     * @return object
      */
-    public function group_by($columns = array())
+    function group_by($columns = array())
     {
         if (!is_array($columns)) {
             $columns = array($columns);
@@ -750,7 +794,7 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
      * @param array $where_clauses
      * @param string $join
      */
-    public function _add_where_clause($where_clauses, $join)
+    function _add_where_clause($where_clauses, $join)
     {
         $clauses = array();
         foreach ($where_clauses as $clause) {
@@ -779,9 +823,9 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     }
     /**
      * Returns the total number of entities known
-     * @return type
+     * @return int
      */
-    public function count()
+    function count()
     {
         $retval = 0;
         $key = $this->object->get_primary_key_column();
@@ -793,9 +837,10 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     }
     /**
      * Returns the generated SQL query to be executed
+     * @param bool $no_entities Default = false
      * @return string
      */
-    public function get_generated_query($no_entities = FALSE)
+    function get_generated_query($no_entities = FALSE)
     {
         $sql = array();
         if ($this->object->is_select_statement()) {
@@ -826,10 +871,12 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     }
     /**
      * Run the query
-     * @param $sql optionally run the specified SQL insteads
-     * return
+     * @param string|bool $sql (optional) run the specified SQL
+     * @param object|bool $model (optional)
+     * @param bool $no_entities (optional)
+     * @return array
      */
-    public function run_query($sql = FALSE, $model = FALSE, $no_entities = FALSE)
+    function run_query($sql = FALSE, $model = FALSE, $no_entities = FALSE)
     {
         $results = FALSE;
         $retval = array();
@@ -874,7 +921,7 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
                 }
             }
         } elseif ($this->object->debug) {
-            var_dump('No entities returned from query');
+            var_dump("No entities returned from query");
         }
         // Just a safety check
         if (!$retval) {
@@ -884,9 +931,10 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     }
     /**
      * Stores the entity
-     * @param stdClass $entity
+     * @param object $entity
+     * @return bool|object
      */
-    public function _save_entity($entity)
+    function _save_entity($entity)
     {
         $retval = FALSE;
         unset($entity->id_field);
@@ -912,12 +960,11 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
         return $retval;
     }
     /**
-     * Converts an entity to something suitable for inserting into
-     * a database column
-     * @param stdObject $entity
+     * Converts an entity to something suitable for inserting into a database column
+     * @param object $entity
      * @return array
      */
-    public function _convert_to_table_data($entity)
+    function _convert_to_table_data($entity)
     {
         $data = (array) $entity;
         foreach ($data as $key => $value) {
@@ -929,10 +976,10 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     }
     /**
      * Destroys/deletes an entity
-     * @param stdObject|C_DataMapper_Model|int $entity
+     * @param object|C_DataMapper_Model|int $entity
      * @return boolean
      */
-    public function destroy($entity)
+    function destroy($entity)
     {
         $retval = FALSE;
         $key = $this->object->get_primary_key_column();
@@ -951,10 +998,10 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     }
     /**
      * Creates a new record in the database
-     * @param stdObject $entity
+     * @param object $entity
      * @return boolean
      */
-    public function _create($entity)
+    function _create($entity)
     {
         $retval = FALSE;
         $id = $this->object->_wpdb()->insert($this->object->get_table_name(), $this->object->_convert_to_table_data($entity));
@@ -966,9 +1013,10 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     }
     /**
      * Updates a record in the database
-     * @param stdObject $entity
+     * @param object $entity
+     * @return int|bool
      */
-    public function _update($entity)
+    function _update($entity)
     {
         $key = $this->object->get_primary_key_column();
         return $this->object->_wpdb()->update($this->object->get_table_name(), $this->object->_convert_to_table_data($entity), array($key => $entity->{$key}));
@@ -976,9 +1024,9 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
     /**
      * Fetches the last row
      * @param array $conditions
-     * @return C_DataMapper_Entity
+     * @return object
      */
-    public function find_last($conditions = array(), $model = FALSE)
+    function find_last($conditions = array(), $model = FALSE)
     {
         $retval = NULL;
         // Get row number for the last row
@@ -992,26 +1040,30 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
         }
         return $retval;
     }
-    public function _add_column($column_name, $datatype, $default_value = NULL)
+    function _add_column($column_name, $datatype, $default_value = NULL)
     {
         $sql = "ALTER TABLE `{$this->get_table_name()}` ADD COLUMN `{$column_name}` {$datatype}";
         if ($default_value) {
             if (is_string($default_value)) {
-                $default_value = str_replace('\'', '\\\'', $default_value);
+                $default_value = str_replace("'", "\\'", $default_value);
             }
-            $sql .= ' NOT NULL DEFAULT ' . (is_string($default_value) ? "'{$default_value}" : "{$default_value}");
+            $sql .= " NOT NULL DEFAULT " . (is_string($default_value) ? "'{$default_value}" : "{$default_value}");
         }
-        return $this->object->_wpdb()->query($sql) ? TRUE : FALSE;
+        $return = $this->object->_wpdb()->query($sql) ? TRUE : FALSE;
+        $this->object->update_columns_cache();
+        return $return;
     }
-    public function _remove_column($column_name)
+    function _remove_column($column_name)
     {
         $sql = "ALTER TABLE `{$this->get_table_name()}` DROP COLUMN `{$column_name}`";
-        return $this->object->_wpdb()->query($sql) ? TRUE : FALSE;
+        $return = $this->object->_wpdb()->query($sql) ? TRUE : FALSE;
+        $this->object->update_columns_cache();
+        return $return;
     }
     /**
      * Migrates the schema of the database
      */
-    public function migrate()
+    function migrate()
     {
         if (!$this->object->_columns) {
             throw new E_ColumnsNotDefinedException("Columns not defined for {$this->get_table_name()}");
@@ -1036,9 +1088,10 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
         if ($added or $removed) {
             // var_dump($this->object->_table_columns);
             $this->object->lookup_columns();
+            // var_dump($added, $removed);
         }
     }
-    public function _init()
+    function _init()
     {
         $this->object->_where_clauses = array();
         $this->object->_order_clauses = array();
@@ -1047,39 +1100,43 @@ class C_CustomTable_DataMapper_Driver_Mixin extends Mixin
         $this->object->_select_clause = '';
     }
 }
+/**
+ * Class C_CustomTable_DataMapper_Driver
+ * @mixin C_CustomTable_DataMapper_Driver_Mixin
+ */
 class C_CustomTable_DataMapper_Driver extends C_DataMapper_Driver_Base
 {
     /**
      * The WordPress Database Connection
      * @var wpdb
      */
-    public $_where_clauses = array();
-    public $_order_clauses = array();
-    public $_group_by_columns = array();
-    public $_limit_clause = '';
-    public $_select_clause = '';
-    public $_delete_clause = '';
+    var $_where_clauses = array();
+    var $_order_clauses = array();
+    var $_group_by_columns = array();
+    var $_limit_clause = '';
+    var $_select_clause = '';
+    var $_delete_clause = '';
     public $_use_cache = TRUE;
-    public function define($object_name = FALSE, $context = FALSE)
+    function define($object_name = FALSE, $context = FALSE)
     {
         parent::define($object_name, $context);
         $this->add_mixin('C_CustomTable_DataMapper_Driver_Mixin');
         $this->implement('I_CustomTable_DataMapper');
     }
-    public function initialize($object_name = FALSE)
+    function initialize($object_name = FALSE)
     {
-        parent::initialize($object_name);
+        parent::initialize();
         if (!isset($this->_primary_key_column)) {
             $this->_primary_key_column = $this->_lookup_primary_key_column();
         }
-        $this->migrate(FALSE);
+        $this->migrate();
     }
     /**
      * Returns the database connection object for WordPress
      * @global wpdb $wpdb
      * @return wpdb
      */
-    public function _wpdb()
+    function _wpdb()
     {
         global $wpdb;
         return $wpdb;
@@ -1087,7 +1144,7 @@ class C_CustomTable_DataMapper_Driver extends C_DataMapper_Driver_Base
     /**
      * Looks up the primary key column for this table
      */
-    public function _lookup_primary_key_column()
+    function _lookup_primary_key_column()
     {
         $key = $this->_wpdb()->get_row("SHOW INDEX FROM {$this->get_table_name()} WHERE Key_name='PRIMARY'", ARRAY_A);
         if (!$key) {
@@ -1112,7 +1169,7 @@ class E_ColumnsNotDefinedException extends E_NggErrorException
  */
 class E_InvalidEntityException extends E_NggErrorException
 {
-    public function __construct($message_or_previous = FALSE, $code = 0, $previous = NULL)
+    function __construct($message_or_previous = FALSE, $code = 0, $previous = NULL)
     {
         // We don't know if we have been passed a message yet or not
         $message = FALSE;
@@ -1126,13 +1183,15 @@ class E_InvalidEntityException extends E_NggErrorException
         }
         // If no message was provided, create a default message
         if (!$message) {
-            $message = 'Invalid data type used for entity. Please use stdClass
-				or a subclass of C_DataMapper_Model. Arrays will be supported in
-				the future.';
+            $message = "Invalid data type used for entity. Please use stdClass\n\t\t\t\tor a subclass of C_DataMapper_Model. Arrays will be supported in\n\t\t\t\tthe future.";
         }
         parent::__construct($message, $code);
     }
 }
+/**
+ * Provides instance methods for C_DataMapper_Driver_Base
+ * @mixin C_DataMapper_Driver_Base
+ */
 class Mixin_DataMapper_Driver_Base extends Mixin
 {
     /**
@@ -1140,50 +1199,53 @@ class Mixin_DataMapper_Driver_Base extends Mixin
      * @param string $val
      * @return string
      */
-    public function _clean_column($val)
+    function _clean_column($val)
     {
-        return str_replace(array(';', '\'', '"', '`'), array(''), $val);
+        return str_replace(array(';', "'", '"', '`'), array(''), $val);
     }
     /**
      * Notes that a particular columns is serialized, and should be unserialized when converted to an entity
      * @param $column
      */
-    public function add_serialized_column($column)
+    function add_serialized_column($column)
     {
         $this->object->_serialized_columns[] = $column;
     }
-    public function unserialize_columns($object)
+    function unserialize_columns($object)
     {
         foreach ($this->object->_serialized_columns as $column) {
             if (isset($object->{$column}) && is_string($object->{$column})) {
-                $object->{$column} = $this->unserialize($object->{$column});
+                $object->{$column} = C_NextGen_Serializable::unserialize($object->{$column});
             }
         }
     }
     /**
      * Serializes the data
+     *
      * @param mixed $value
      * @return string
      */
-    public function serialize($value)
+    function serialize($value)
     {
-        return M_DataMapper::serialize($value);
+        return C_NextGen_Serializable::serialize($value);
     }
     /**
      * Unserializes data using our proprietary format
+     *
      * @param string $value
      * @return mixed
      */
-    public function unserialize($value)
+    function unserialize($value)
     {
-        return M_DataMapper::unserialize($value);
+        return C_NextGen_Serializable::unserialize($value);
     }
     /**
      * Finds a partiular entry by id
      * @param int|stdClass|C_DataMapper_Model $entity
-     * @return C_DataMapper_Entity
+     * @param object|bool $model (optional)
+     * @return null|object
      */
-    public function find($entity, $model = FALSE)
+    function find($entity, $model = FALSE)
     {
         $retval = NULL;
         // Get primary key of the entity
@@ -1202,10 +1264,11 @@ class Mixin_DataMapper_Driver_Base extends Mixin
     }
     /**
      * Fetches the first row
-     * @param array $conditions
-     * @return C_DataMapper_Entity
+     * @param array $conditions (optional)
+     * @param object|bool $model (optional)
+     * @return null|object
      */
-    public function find_first($conditions = array(), $model = FALSE)
+    function find_first($conditions = array(), $model = FALSE)
     {
         $results = $this->object->select()->where_and($conditions)->limit(1, 0)->run_query();
         if ($results) {
@@ -1216,10 +1279,11 @@ class Mixin_DataMapper_Driver_Base extends Mixin
     }
     /**
      * Queries all rows
-     * @param array $conditions
+     * @param array $conditions (optional)
+     * @param object|bool $model (optional)
      * @return array
      */
-    public function find_all($conditions = array(), $model = FALSE)
+    function find_all($conditions = array(), $model = FALSE)
     {
         // Sometimes users will forget that the first parameter is conditions, and think it's $model instead
         if ($conditions === TRUE) {
@@ -1228,7 +1292,6 @@ class Mixin_DataMapper_Driver_Base extends Mixin
         }
         if ($conditions === FALSE) {
             $conditions = array();
-            $model = FALSE;
         }
         $results = $this->object->select()->where_and($conditions)->run_query();
         if ($results && $model) {
@@ -1246,16 +1309,26 @@ class Mixin_DataMapper_Driver_Base extends Mixin
      *			array("post_title = %s", "Foo"),
      *
      *		)
+     * @param array $conditions (optional)
+     * @return self
      */
-    public function where_and($conditions = array())
+    function where_and($conditions = array())
     {
         return $this->object->_where($conditions, 'AND');
     }
-    public function where_or($conditions = array())
+    /**
+     * @param array $conditions (optional)
+     * @return self
+     */
+    function where_or($conditions = array())
     {
         return $this->object->where($conditions, 'OR');
     }
-    public function where($conditions = array())
+    /**
+     * @param array $conditions (optional)
+     * @return self
+     */
+    function where($conditions = array())
     {
         return $this->object->_where($conditions, 'AND');
     }
@@ -1272,7 +1345,7 @@ class Mixin_DataMapper_Driver_Base extends Mixin
      * @param string $operator
      * @return ExtensibleObject
      */
-    public function _where($conditions = array(), $operator)
+    function _where($conditions = array(), $operator)
     {
         $where_clauses = array();
         // If conditions is not an array, make it one
@@ -1313,7 +1386,7 @@ class Mixin_DataMapper_Driver_Base extends Mixin
      * @param string $condition
      * @return array
      */
-    public function _parse_where_clause($condition)
+    function _parse_where_clause($condition)
     {
         $column = '';
         $operator = '';
@@ -1353,11 +1426,11 @@ class Mixin_DataMapper_Driver_Base extends Mixin
             $condition = $wpdb->prepare($condition, $binds);
         }
         // Parse the where clause
-        if (preg_match('/^[^\\s]+/', $condition, $match)) {
+        if (preg_match("/^[^\\s]+/", $condition, $match)) {
             $column = trim(array_shift($match));
             $condition = str_replace($column, '', $condition);
         }
-        if (preg_match('/(NOT )?IN|(NOT )?LIKE|(NOT )?BETWEEN|[=!<>]+/i', $condition, $match)) {
+        if (preg_match("/(NOT )?IN|(NOT )?LIKE|(NOT )?BETWEEN|[=!<>]+/i", $condition, $match)) {
             $operator = trim(array_shift($match));
             $condition = str_replace($operator, '', $condition);
             $operator = strtolower($operator);
@@ -1368,9 +1441,9 @@ class Mixin_DataMapper_Driver_Base extends Mixin
         // has multiple values, we attempt to split the values apart into an
         // array and iterate over them individually
         if ($operator == 'in') {
-            $values = preg_split('/\'?\\s?(,)\\s?\'?/i', $value);
+            $values = preg_split("/'?\\s?(,)\\s?'?/i", $value);
         } elseif ($operator == 'between') {
-            $values = preg_split('/\'?\\s?(AND)\\s?\'?/i', $value);
+            $values = preg_split("/'?\\s?(AND)\\s?'?/i", $value);
         }
         // If there's a single value, treat it as an array so that we
         // can still iterate
@@ -1378,8 +1451,8 @@ class Mixin_DataMapper_Driver_Base extends Mixin
             $values = array($value);
         }
         foreach ($values as $index => $value) {
-            $value = preg_replace('/^(\\()?\'/', '', $value);
-            $value = preg_replace('/\'(\\))?$/', '', $value);
+            $value = preg_replace("/^(\\()?'/", '', $value);
+            $value = preg_replace("/'(\\))?\$/", '', $value);
             $values[$index] = $value;
         }
         if (count($values) > 1) {
@@ -1391,10 +1464,10 @@ class Mixin_DataMapper_Driver_Base extends Mixin
     }
     /**
      * Converts a stdObject to an Entity
-     * @param stdObject $stdObject
-     * @return stdObject
+     * @param object $stdObject
+     * @return object
      */
-    public function _convert_to_entity($stdObject)
+    function _convert_to_entity($stdObject)
     {
         // Add name of the id_field to the entity, and convert
         // the ID to an integer
@@ -1412,7 +1485,7 @@ class Mixin_DataMapper_Driver_Base extends Mixin
         }
         return $stdObject;
     }
-    public function strip_slashes($stdObject_or_array_or_string)
+    function strip_slashes($stdObject_or_array_or_string)
     {
         /**
          * Some objects have properties that are recursive objects. To avoid this we have to keep track
@@ -1423,7 +1496,7 @@ class Mixin_DataMapper_Driver_Base extends Mixin
         $level++;
         $processed_objects[] = $stdObject_or_array_or_string;
         if (is_string($stdObject_or_array_or_string)) {
-            $stdObject_or_array_or_string = str_replace('\\\'', '\'', str_replace('\\"', '"', str_replace('\\\\', '\\', $stdObject_or_array_or_string)));
+            $stdObject_or_array_or_string = str_replace("\\'", "'", str_replace('\\"', '"', str_replace("\\\\", "\\", $stdObject_or_array_or_string)));
         } elseif (is_object($stdObject_or_array_or_string) && !in_array($stdObject_or_array_or_string, $processed_objects)) {
             foreach (get_object_vars($stdObject_or_array_or_string) as $key => $val) {
                 if ($val != $stdObject_or_array_or_string && $key != '_mapper') {
@@ -1446,9 +1519,11 @@ class Mixin_DataMapper_Driver_Base extends Mixin
     }
     /**
      * Converts a stdObject entity to a model
-     * @param stdObject $stdObject
+     * @param object $stdObject
+     * @param string|bool $context (optional)
+     * @return object
      */
-    public function convert_to_model($stdObject, $context = FALSE)
+    function convert_to_model($stdObject, $context = FALSE)
     {
         // Create a factory
         $retval = NULL;
@@ -1462,10 +1537,11 @@ class Mixin_DataMapper_Driver_Base extends Mixin
     }
     /**
      * Creates a new model
-     * @param stdClass|array $properties
+     * @param object|array $properties (optional)
+     * @param string|bool $context (optional)
      * @return C_DataMapper_Model
      */
-    public function create($properties = array(), $context = FALSE)
+    function create($properties = array(), $context = FALSE)
     {
         $entity = $properties;
         $factory = C_Component_Factory::get_instance();
@@ -1482,19 +1558,20 @@ class Mixin_DataMapper_Driver_Base extends Mixin
      * @param mixed $obj
      * @return bool
      */
-    public function is_model($obj)
+    function is_model($obj)
     {
         return is_subclass_of($obj, 'C_DataMapper_Model') or get_class($obj) == 'C_DataMapper_Model';
     }
     /**
      * Saves an entity
      * @param stdClass|C_DataMapper_Model $entity
-     * @return bool
+     * @return bool|int Resulting ID or false upon failure
      */
-    public function save($entity)
+    function save($entity)
     {
         $retval = FALSE;
         $model = $entity;
+        $this->flush_query_cache();
         // Attempt to use something else, most likely an associative array
         // TODO: Support assocative arrays. The trick is to support references
         // with dynamic calls using __call() and call_user_func_array().
@@ -1511,6 +1588,7 @@ class Mixin_DataMapper_Driver_Base extends Mixin
             unset($saved_entity->_errors);
             $retval = $this->object->_save_entity($saved_entity);
         }
+        $this->flush_query_cache();
         // We always return the same type of entity that we given
         if (get_class($entity) == 'stdClass') {
             $model->get_entity();
@@ -1522,7 +1600,7 @@ class Mixin_DataMapper_Driver_Base extends Mixin
      * @param stdClass|C_DataMapper_Model $entity
      * @return array
      */
-    public function get_errors($entity)
+    function get_errors($entity)
     {
         $model = $entity;
         if (!$this->object->is_model($entity)) {
@@ -1536,11 +1614,12 @@ class Mixin_DataMapper_Driver_Base extends Mixin
      * Subclasses and adapters should extend this method to provide their
      * implementation. The implementation should make use of the
      * _set_default_value() method
+     * @param object $stdObject
      */
-    public function set_defaults()
+    function set_defaults($stdObject)
     {
     }
-    public function has_default_values($entity)
+    function has_default_values($entity)
     {
         return isset($entity->__defaults_set) && $entity->__defaults_set == TRUE;
     }
@@ -1548,7 +1627,7 @@ class Mixin_DataMapper_Driver_Base extends Mixin
      * If a field has no value, then use the default value.
      * @param stdClass|C_DataMapper_Model $object
      */
-    public function _set_default_value($object)
+    function _set_default_value($object)
     {
         $array = NULL;
         $field = NULL;
@@ -1589,43 +1668,39 @@ class Mixin_DataMapper_Driver_Base extends Mixin
             }
         }
     }
-    public function define_column($name, $type, $default_value = NULL)
+    function define_column($name, $type, $default_value = NULL)
     {
         $this->object->_columns[$name] = array('type' => $type, 'default_value' => $default_value);
     }
-    public function get_defined_column_names()
+    function get_defined_column_names()
     {
         return array_keys($this->object->_columns);
     }
-    public function has_defined_column($name)
+    function has_defined_column($name)
     {
         $columns = $this->object->_columns;
         return isset($columns[$name]);
     }
-    public function cast_columns($entity)
+    function cast_columns($entity)
     {
         foreach ($this->object->_columns as $key => $properties) {
             $value = property_exists($entity, $key) ? $entity->{$key} : NULL;
             $default_value = $properties['default_value'];
             if (!is_null($value) && $value !== $default_value) {
                 $column_type = $this->object->_columns[$key]['type'];
-                if (preg_match('/varchar|text/i', $column_type)) {
+                if (preg_match("/varchar|text/i", $column_type)) {
                     if (!is_array($value) && !is_object($value)) {
                         $entity->{$key} = strval($value);
                     }
                 } else {
-                    if (preg_match('/decimal|numeric|double/i', $column_type)) {
-                        $entity->{$key} = doubleval($value);
+                    if (preg_match("/decimal|numeric|double|float/i", $column_type)) {
+                        $entity->{$key} = floatval($value);
                     } else {
-                        if (preg_match('/float/i', $column_type)) {
-                            $entity->{$key} = floatval($value);
+                        if (preg_match("/int/i", $column_type)) {
+                            $entity->{$key} = intval($value);
                         } else {
-                            if (preg_match('/int/i', $column_type)) {
-                                $entity->{$key} = intval($value);
-                            } else {
-                                if (preg_match('/bool/i', $column_type)) {
-                                    $entity->{$key} = $value ? TRUE : FALSE;
-                                }
+                            if (preg_match("/bool/i", $column_type)) {
+                                $entity->{$key} = $value ? TRUE : FALSE;
                             }
                         }
                     }
@@ -1637,22 +1712,27 @@ class Mixin_DataMapper_Driver_Base extends Mixin
         return $entity;
     }
 }
+/**
+ * Class C_CustomPost_DataMapper_Driver
+ * @mixin Mixin_CustomPost_DataMapper_Driver
+ * @implements I_CustomPost_DataMapper
+ */
 class C_CustomPost_DataMapper_Driver extends C_DataMapper_Driver_Base
 {
-    public $_query_args = array();
-    public $_primary_key_column = 'ID';
+    var $_query_args = array();
+    var $_primary_key_column = 'ID';
     static $_post_table_columns = array();
     public $_use_cache = TRUE;
-    public function define($object_name = FALSE, $context = FALSE)
+    function define($object_name = FALSE, $context = FALSE)
     {
         if (strlen($object_name) > 20) {
-            throw new Exception('The custom post name can be no longer than 20 characters long');
+            throw new Exception("The custom post name can be no longer than 20 characters long");
         }
         parent::define($object_name, $context);
         $this->add_mixin('Mixin_CustomPost_DataMapper_Driver');
         $this->implement('I_CustomPost_DataMapper');
     }
-    public function lookup_columns()
+    function lookup_columns()
     {
         if (empty(self::$_post_table_columns)) {
             $columns = parent::lookup_columns();
@@ -1670,20 +1750,27 @@ class C_CustomPost_DataMapper_Driver extends C_DataMapper_Driver_Base
      * @global string $table_prefix
      * @return string
      */
-    public function get_table_name()
+    function get_table_name()
     {
         global $table_prefix;
         return $table_prefix . 'posts';
     }
 }
+/**
+ * Class C_DataMapper_Model
+ * @mixin Mixin_Validation
+ * @mixin Mixin_DataMapper_Model_Instance_Methods
+ * @mixin Mixin_DataMapper_Model_Validation
+ * @implements I_DataMapper_Model
+ */
 class C_DataMapper_Model extends C_Component
 {
-    public $_mapper;
-    public $_stdObject;
+    var $_mapper;
+    var $_stdObject;
     /**
      * Define the model
      */
-    public function define($mapper = NULL, $properties = array(), $context = FALSE)
+    function define($mapper = NULL, $properties = array(), $context = FALSE)
     {
         parent::define($context);
         $this->add_mixin('Mixin_Validation');
@@ -1693,11 +1780,10 @@ class C_DataMapper_Model extends C_Component
     }
     /**
      * Creates a new entity for the specified mapper
-     * @param C_DataMapper_Driver_Base $mapper
-     * @param array|stdClass $properties
-     * @param string $context
+     * @param C_DataMapper_Driver_Base $mapper (optional)
+     * @param array|object|bool $properties (optional)
      */
-    public function initialize($mapper = NULL, $properties = FALSE)
+    function initialize($mapper = NULL, $properties = FALSE)
     {
         $this->_mapper = $mapper;
         $this->_stdObject = $properties ? (object) $properties : new stdClass();
@@ -1707,7 +1793,11 @@ class C_DataMapper_Model extends C_Component
             $this->_stdObject->__defaults_set = TRUE;
         }
     }
-    public function has_default_values()
+    function jsonSerialize()
+    {
+        return $this->get_entity();
+    }
+    function has_default_values()
     {
         return isset($this->_stdObject->__defaults_set) && $this->_stdObject->__defaults_set == TRUE;
     }
@@ -1715,14 +1805,16 @@ class C_DataMapper_Model extends C_Component
      * Gets the data mapper for the entity
      * @return C_DataMapper_Driver_Base
      */
-    public function get_mapper()
+    function get_mapper()
     {
         return $this->_mapper;
     }
     /**
-     * Gets a   property of the model
+     * Gets a property of the model
+     * @param string $property
+     * @return mixed
      */
-    public function &__get($property)
+    function &__get($property)
     {
         if (isset($this->_stdObject->{$property})) {
             $retval =& $this->_stdObject->{$property};
@@ -1736,29 +1828,34 @@ class C_DataMapper_Model extends C_Component
     }
     /**
      * Sets a property for the model
+     * @param mixed $property
+     * @param mixed $value
+     * @return mixed $value
      */
-    public function &__set($property, $value)
+    function &__set($property, $value)
     {
         $retval = $this->_stdObject->{$property} = $value;
         return $retval;
     }
-    public function __isset($property_name)
+    function __isset($property_name)
     {
         return isset($this->_stdObject->{$property_name});
     }
     /**
      * Saves the entity
-     * @param type $updated_attributes
+     * @param array $updated_attributes
+     * @return int|bool Object ID or false upon failure
      */
-    public function save($updated_attributes = array())
+    function save($updated_attributes = array())
     {
         $this->update_attributes($updated_attributes);
         return $this->get_mapper()->save($this->get_entity());
     }
     /**
      * Updates the attributes for an object
+     * @param array $array (optional)
      */
-    public function update_attributes($array = array())
+    function update_attributes($array = array())
     {
         foreach ($array as $key => $value) {
             $this->_stdObject->{$key} = $value;
@@ -1767,7 +1864,7 @@ class C_DataMapper_Model extends C_Component
     /**
      * Sets the default values for this model
      */
-    public function set_defaults()
+    function set_defaults()
     {
         $mapper = $this->get_mapper();
         if ($mapper->has_method('set_defaults')) {
@@ -1777,22 +1874,24 @@ class C_DataMapper_Model extends C_Component
     /**
      * Destroys or deletes the entity
      */
-    public function destroy()
+    function destroy()
     {
         return $this->get_mapper()->destroy($this->_stdObject);
     }
     /**
      * Determines whether the object is new or existing
-     * @return type
+     * @return bool
      */
-    public function is_new()
+    function is_new()
     {
         return $this->id() ? FALSE : TRUE;
     }
     /**
      * Gets/sets the primary key
+     * @param null|int|string $value (optional)
+     * @return mixed
      */
-    public function id($value = NULL)
+    function id($value = NULL)
     {
         $key = $this->get_mapper()->get_primary_key_column();
         if ($value) {
@@ -1806,7 +1905,7 @@ class C_DataMapper_Model extends C_Component
  */
 class Mixin_DataMapper_Model_Validation extends Mixin
 {
-    public function validation()
+    function validation()
     {
         return $this->object->is_valid();
     }
@@ -1816,7 +1915,7 @@ class Mixin_DataMapper_Model_Instance_Methods extends Mixin
     /**
      * Returns the associated entity
      */
-    public function &get_entity()
+    function &get_entity()
     {
         return $this->object->_stdObject;
     }

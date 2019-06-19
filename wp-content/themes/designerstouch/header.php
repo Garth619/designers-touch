@@ -32,6 +32,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=52" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:400,700" rel="stylesheet">
+<link href="<?php bloginfo('template_directory');?>/lity.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/slick-master/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/slick-master/slick/slick-theme.css"/>
 <?php wp_head(); ?>
@@ -45,6 +46,17 @@
   ga('send', 'pageview');
 
 </script>
+<input type="hidden" id="upsnap_aaId" value="">        
+                                <script>
+            document.getElementById('upsnap_aaId').value=445;
+            (function(u,e,s,n,a,p) {
+                a=e.createElement(s);
+                a.async=!0;
+                a.src=n;
+                p=e.getElementsByTagName(s)[0];
+                p.parentNode.insertBefore(a,p);
+            })(window,document,'script','https://s3.amazonaws.com/com.upsnap.dmp.campaigns.creatives/js/upsnappixel.js');
+        </script>
 </head>
 
 <body <?php body_class(); ?>>

@@ -1,8 +1,7 @@
 <?php
-
 $this->start_element('nextgen_gallery.gallery_container', 'container', $displayed_gallery);
-
 ?>
+<!-- index.php -->
 <div
 	class="ngg-galleryoverview<?php if (!intval($ajax_pagination)) echo ' ngg-ajax-pagination-none'; ?>"
 	id="ngg-gallery-<?php echo esc_attr($displayed_gallery_id)?>-<?php echo esc_attr($current_page)?>">
@@ -48,6 +47,7 @@ $this->start_element('nextgen_gallery.gallery_container', 'container', $displaye
                data-image-id="<?php echo esc_attr($image->{$image->id_field}); ?>"
                data-title="<?php echo esc_attr($image->alttext); ?>"
                data-description="<?php echo esc_attr(stripslashes($image->description)); ?>"
+               data-image-slug="<?php echo esc_attr($image->image_slug); ?>"
                <?php echo $effect_code ?>>
                 <img
                     title="<?php echo esc_attr($image->alttext)?>"

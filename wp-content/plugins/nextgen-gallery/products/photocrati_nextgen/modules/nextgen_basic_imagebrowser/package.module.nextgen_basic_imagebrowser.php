@@ -1,16 +1,20 @@
 <?php
 /**
  * Adds validation for the NextGen Basic ImageBrowser display type
+ * @mixin C_Display_Type
+ * @adapts I_Display_Type
  */
 class A_NextGen_Basic_ImageBrowser extends Mixin
 {
-    public function validation()
+    function validation()
     {
         return $this->call_parent('validation');
     }
 }
 /**
  * Provides rendering logic for the NextGen Basic ImageBrowser
+ * @mixin C_Display_Type_Controller
+ * @adapts I_Display_Type_Controller for "photocrati-nextgen_basic_imagebrowser" context
  */
 class A_NextGen_Basic_ImageBrowser_Controller extends Mixin
 {
@@ -21,8 +25,11 @@ class A_NextGen_Basic_ImageBrowser_Controller extends Mixin
      * @param bool $return
      * @return string
      */
-    public function index_action($displayed_gallery, $return = FALSE)
+    function index_action($displayed_gallery, $return = FALSE)
     {
+        // We now hide option for triggers on this display type.
+        // This ensures they do not show based on past settings.
+        $displayed_gallery->display_settings['ngg_triggers_display'] = 'never';
         $picture_list = array();
         foreach ($displayed_gallery->get_included_entities() as $image) {
             $picture_list[$image->{$image->id_field}] = $image;
@@ -37,15 +44,16 @@ class A_NextGen_Basic_ImageBrowser_Controller extends Mixin
         } else {
             return $this->object->render_partial('photocrati-nextgen_gallery_display#no_images_found', array(), $return);
         }
+        return '';
     }
     /**
      * Returns the rendered template of an image browser display
      *
-     * @param C_Displayed_Gallery
+     * @param C_Displayed_Gallery $displayed_gallery
      * @param array $picture_list
      * @return string Rendered HTML (probably)
      */
-    public function render_image_browser($displayed_gallery, $picture_list)
+    function render_image_browser($displayed_gallery, $picture_list)
     {
         $display_settings = $displayed_gallery->display_settings;
         $storage = C_Gallery_Storage::get_instance();
@@ -145,42 +153,60 @@ class A_NextGen_Basic_ImageBrowser_Controller extends Mixin
      *
      * @param C_Displayed_Gallery $displayed_gallery
      */
-    public function enqueue_frontend_resources($displayed_gallery)
+    function enqueue_frontend_resources($displayed_gallery)
     {
         $this->call_parent('enqueue_frontend_resources', $displayed_gallery);
-        wp_enqueue_style('nextgen_basic_imagebrowser_style', $this->get_static_url('photocrati-nextgen_basic_imagebrowser#style.css'), FALSE, NGG_SCRIPT_VERSION);
+        wp_enqueue_style('nextgen_basic_imagebrowser_style', $this->get_static_url('photocrati-nextgen_basic_imagebrowser#style.css'), array(), NGG_SCRIPT_VERSION);
         $this->enqueue_ngg_styles();
     }
 }
+/**
+ * Class A_NextGen_Basic_ImageBrowser_Form
+ * @mixin C_Form
+ * @adapts I_Form for "photocrati-nextgen_basic_imagebrowser" context
+ */
 class A_NextGen_Basic_ImageBrowser_Form extends Mixin_Display_Type_Form
 {
-    public function get_display_type_name()
+    function get_display_type_name()
     {
         return NGG_BASIC_IMAGEBROWSER;
     }
     /**
      * Returns a list of fields to render on the settings page
      */
-    public function _get_field_names()
+    function _get_field_names()
     {
-        return array('ajax_pagination', 'nextgen_basic_templates_template');
+        return array('ajax_pagination', 'display_view', 'nextgen_basic_templates_template');
     }
 }
+/**
+ * Class A_NextGen_Basic_ImageBrowser_Mapper
+ * @mixin C_Display_Type_Mapper
+ * @adapts I_Display_Type_Mapper
+ */
 class A_NextGen_Basic_ImageBrowser_Mapper extends Mixin
 {
-    public function set_defaults($entity)
+    function set_defaults($entity)
     {
         $this->call_parent('set_defaults', $entity);
         if (isset($entity->name) && $entity->name == NGG_BASIC_IMAGEBROWSER) {
+            $default_template = isset($entity->settings["template"]) ? 'default' : 'default-view.php';
+            $this->object->_set_default_value($entity, 'settings', 'display_view', $default_template);
             $this->object->_set_default_value($entity, 'settings', 'template', '');
+            $this->object->_set_default_value($entity, 'settings', 'ajax_pagination', '1');
             // Part of the pro-modules
             $this->object->_set_default_value($entity, 'settings', 'ngg_triggers_display', 'never');
         }
     }
 }
+/**
+ * Class A_NextGen_Basic_ImageBrowser_Urls
+ * @mixin C_Routing_App
+ * @adapts I_Routing_App
+ */
 class A_NextGen_Basic_ImageBrowser_Urls extends Mixin
 {
-    public function create_parameter_segment($key, $value, $id = NULL, $use_prefix = FALSE)
+    function create_parameter_segment($key, $value, $id = NULL, $use_prefix = FALSE)
     {
         if ($key == 'pid') {
             return "image/{$value}";

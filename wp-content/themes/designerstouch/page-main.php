@@ -49,9 +49,11 @@ get_header(); ?>
 		
 		<div class="review_icons">
 			
+<!--
 			<a href="http://www.bbb.org/louisville/business-reviews/drapery-installation-service/designers-touch-in-floyds-knobs-in-2000333/#bbbonlineclick" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/bbb.png"/>
 			</a>
+-->
 			
 			<a href="http://metro-links.com/LouisvilleKentucky" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/louis.png"/>
@@ -73,7 +75,7 @@ get_header(); ?>
 				<img width="55" src="<?php bloginfo('template_directory');?>/images/square-facebook-512.png"/>
 			</a>
 			
-			<a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=designers%20touch%20ky&lrd=0x8869a0f199bb98ff:0xea94fe71a7dd9152,3," target="_blank">
+			<a href="https://www.google.com/search?q=designers+touch+ky&sa=X&ved=0ahUKEwigiLncoKfVAhWJrlQKHf1oBbAQuzEICQ&biw=1619&bih=850" target="_blank">
 				<img width="60" src="<?php bloginfo('template_directory');?>/images/google-plus-flat.png"/>
 			</a>
 			
@@ -88,7 +90,11 @@ get_header(); ?>
 			
 			<div class="new_video">
 				
-				<img src="<?php bloginfo('template_directory');?>/images/video-banner.jpg"/>
+				<a href="https://www.youtube.com/embed/tpoNwrhqDt8?autoplay=1" data-lity>
+				
+					<img src="<?php bloginfo('template_directory');?>/images/video-banner.jpg"/>
+				
+				</a>
 				
 			</div><!-- new_video -->
 			
@@ -145,10 +151,12 @@ get_header(); ?>
 		
 		<div class="review_icons">
 			
+<!--
 			<a href="http://www.bbb.org/louisville/business-reviews/drapery-installation-service/designers-touch-in-floyds-knobs-in-2000333/#bbbonlineclick" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/bbb.png"/>
 			</a>
 			
+-->
 			<a href="http://metro-links.com/LouisvilleKentucky" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/louis.png"/>
 			</a>
@@ -169,7 +177,7 @@ get_header(); ?>
 				<img width="55" src="<?php bloginfo('template_directory');?>/images/square-facebook-512.png"/>
 			</a>
 			
-			<a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=designers%20touch%20ky&lrd=0x8869a0f199bb98ff:0xea94fe71a7dd9152,3," target="_blank">
+			<a href="https://www.google.com/search?q=designers+touch+ky&sa=X&ved=0ahUKEwigiLncoKfVAhWJrlQKHf1oBbAQuzEICQ&biw=1619&bih=850" target="_blank">
 				<img width="60" src="<?php bloginfo('template_directory');?>/images/google-plus-flat.png"/>
 			</a>
 			
@@ -184,7 +192,11 @@ get_header(); ?>
 			
 			<div class="new_video">
 				
-				<img src="<?php bloginfo('template_directory');?>/images/video-banner.jpg"/>
+				<a href="https://www.youtube.com/embed/tpoNwrhqDt8?autoplay=1" data-lity>
+				
+					<img src="<?php bloginfo('template_directory');?>/images/video-banner.jpg"/>
+				
+				</a>
 				
 			</div><!-- new_video -->
 			
@@ -202,7 +214,7 @@ get_header(); ?>
 		
 		<span class="intro_header">Designing Custom Window Treatments Since 1972!</span>
 		
-		<img src="<?php bloginfo('template_directory');?>/images/ew.jpg"/>
+		
 		
 		<div class="intro_options_wrapper">
 			

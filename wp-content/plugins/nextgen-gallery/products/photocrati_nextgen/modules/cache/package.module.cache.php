@@ -1,13 +1,22 @@
 <?php
+/**
+ * Class C_Cache
+ * @mixin Mixin_Cache
+ * @implements I_Cache
+ */
 class C_Cache extends C_Component
 {
     public static $_instances = array();
-    public function define($context = FALSE)
+    function define($context = FALSE)
     {
         parent::define($context);
         $this->add_mixin('Mixin_Cache');
         $this->implement('I_Cache');
     }
+    /**
+     * @param bool|string $context
+     * @return C_Cache
+     */
     public static function get_instance($context = False)
     {
         if (!isset(self::$_instances[$context])) {

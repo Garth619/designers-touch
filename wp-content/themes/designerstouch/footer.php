@@ -119,9 +119,11 @@
 		
 		<div class="review_icons">
 			
+<!--
 			<a href="http://www.bbb.org/louisville/business-reviews/drapery-installation-service/designers-touch-in-floyds-knobs-in-2000333/#bbbonlineclick" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/bbb.png"/>
 			</a>
+-->
 			
 			<a href="http://metro-links.com/LouisvilleKentucky" target="_blank">
 				<img src="<?php bloginfo('template_directory');?>/images/louis.png"/>
@@ -198,7 +200,8 @@
 		
 	</div><!-- social_icons -->
 	
-	<span class="copy">&copy; Copyright by Designer's Touch All Rights&nbsp;Reserved.</span>
+	<span class="copy">&copy; Copyright by Designer's Touch All Rights&nbsp;Reserved.<br/>
+	<a href="http://mylocalpage.com/privacy-policy.txt" target="_blank">Privacy and Cookie Policy</a></span>
 	
 	<span class="footer_numbers">Ky <a href="tel:5022674971">502 267 4971</a> | In <a href="tel:8129442267">812 944 2267</a> | <a href="mailto:charlie@designers-touch.com">charlie@designers-touch.com</a></span>
 	
@@ -208,28 +211,12 @@
 </footer>
 
 
-<?php if(is_page(4)):?>
 
-
-<div class="video_overlay_wrapper">
-	
-	<div class="video_inner_overlay">
-		
-		<span class="my_close">Close X</span><!-- my_close -->
-		
-		<div class='embed-container'><?php the_field('video');?></div>
-		
-	</div><!-- video_inner_overlay -->
-	
-</div><!-- video_overlay_wrapper -->
-
-
-<?php endif;?>
 
 
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/slick-master/slick/slick.min.js"></script>
-
+<script src="<?php bloginfo('template_directory');?>/lity.js"></script>
 
 <script type="text/javascript">
 	
@@ -329,6 +316,7 @@
 	
 	// Video Overlay
 	
+/*
 	jQuery('.new_video').click(function() {
 		
 		jQuery('.video_overlay_wrapper').addClass('open');
@@ -340,6 +328,7 @@
 		jQuery('.video_overlay_wrapper').removeClass('open');
 		
 	});
+*/
 	
 	
 	// Same Heights

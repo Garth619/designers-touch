@@ -3,10 +3,12 @@
     <select id="gallery_id">
         <option value="0"><?php _e('Create a new gallery', 'nggallery'); ?></option>
         <?php foreach ($galleries as $gallery): ?>
-            <option value="<?php echo esc_attr($gallery->{$gallery->id_field}) ?>"><?php echo esc_attr($gallery->title) ?></option>
+            <option value="<?php echo esc_attr($gallery->{$gallery->id_field}) ?>">
+                <?php print esc_attr(apply_filters('ngg_gallery_title_select_field', $gallery->title, $gallery, FALSE)); ?>
+            </option>
         <?php endforeach ?>
     </select>
-    <input type="text" id="gallery_name" name="gallery_name"/>
+    <input type="text" id="gallery_name" name="gallery_name" placeholder="<?php _e('Gallery title', 'nggallery'); ?>"/>
 </div>
 
 <div id="uploader">
@@ -45,9 +47,7 @@
                 window.set_plupload_url = function(gallery_id, gallery_name) {
                     var qs = "&action=upload_image&gallery_id="+urlencode(gallery_id);
                     qs += "&gallery_name="+urlencode(gallery_name);
-	                <?php foreach ($sec_token->get_request_list() as $name=>$value): ?>
-	                qs += "&<?php echo $name?>=<?php echo $value?>";
-	                <?php endforeach ?>
+                    qs += "&nonce="+urlencode("<?php echo $nonce; ?>");
                     return photocrati_ajax.url + qs;
                 };
 
@@ -173,6 +173,8 @@
                                 msg = NggUploadImages_i18n.no_images_uploaded;
                             }
                             else {
+
+
                                 msg = upload_count == 1 ? NggUploadImages_i18n.one_image_uploaded : NggUploadImages_i18n.x_images_uploaded;
                                 msg = msg.replace('{count}', upload_count);
                                 
@@ -192,7 +194,7 @@
                                         href: gallery_url,
                                         target: '_blank'
                                     });
-                                    $link.text(NggUploadImages_i18n.manage_gallery);
+                                    $link.text(NggUploadImages_i18n.manage_gallery.replace('{name}', $gallery_name.val()));
                                     msg = msg + ' ' + $link[0].outerHTML;
                                 }
                             }
@@ -208,7 +210,7 @@
 								}
 								else {
 									$.gritter.add({
-										title: '<?php _e("Upload complete", 'nggallery'); ?>',
+										title: '<?php _e("Upload complete. Great job!", 'nggallery'); ?>',
 										text: msg,
 										sticky: true
 									});
@@ -226,6 +228,7 @@
                             if (typeof(response) != 'object') {
                                 try {
                                     response = JSON.parse(info.response);
+                                    if (!response) throw new Error();
                                 }
                                 catch (ex) {
                                     up.trigger('Error', {
@@ -294,6 +297,10 @@
                     uploader.refresh();
                     window.Frame_Event_Publisher.broadcast();
 
+										var evtJq = $;
+										if (window.top.jQuery)
+											evtJq = window.top.jQuery;
+										evtJq(window.top.document).find('body').trigger('nextgen_event', [ 'plupload_init' ]);
                 };
 
                 window.init_plupload();
